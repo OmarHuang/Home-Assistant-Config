@@ -1,0 +1,12 @@
+# Example configuration.yaml entry
+default_config:
+
+# Text to speech
+tts:
+  platform: google_translate
+
+# Include
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
