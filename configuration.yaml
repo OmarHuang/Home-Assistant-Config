@@ -14,7 +14,6 @@ scene: !include scenes.yaml
 
 # https
 http:
-  base_url: !secret base_url 
   server_port: !secret server_port
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
