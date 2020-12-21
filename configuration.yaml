@@ -1,12 +1,38 @@
 # Example configuration.yaml entry
 default_config:
 
-# Text to speech
-tts:
-  platform: google_translate
-
+# Google Calendar
+google:
+  client_id: !secret google_cal_id
+  client_secret: !secret google_cal_secret
+  
 # Include
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+# https
+http:
+  base_url: !secret base_url 
+  server_port: !secret server_port
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+# Spotify
+spotify:
+  client_id: !secret spotify_id
+  client_secret: !secret spotify_secret
+
+# Text to speech
+tts:
+  platform: google_translate
+  
+# Tuya
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: !secret country_code
+  platform: smart_life
