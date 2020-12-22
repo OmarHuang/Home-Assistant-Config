@@ -1,11 +1,11 @@
 # Example configuration.yaml entry
 default_config:
-
+  
 # Google Calendar
 google:
   client_id: !secret google_cal_id
   client_secret: !secret google_cal_secret
-  
+    
 # Include
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -28,10 +28,3 @@ spotify:
 # Text to speech
 tts:
   platform: google_translate
-  
-# Tuya
-tuya:
-  username: !secret tuya_username
-  password: !secret tuya_password
-  country_code: !secret country_code
-  platform: smart_life
