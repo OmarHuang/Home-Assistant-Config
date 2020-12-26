@@ -5,10 +5,22 @@ default_config:
 google_assistant:
   project_id: !secret project_id
   report_state: true
-  service_account:
-    private_key: !secret google_assistant_private_key
-    client_email: !secret google_assistant_client_email
-    expose_by_default: true
+  service_account: !include Google_assistant.json
+  exposed_domains:
+    - switch
+    - light
+    - media_player
+    - scene
+    - climate
+    - cover
+    - person
+    - fan
+    - automation
+    - remote
+    - input_boolean
+    - sensor
+    - binary_sensor
+    - device_tracker
     
 # Google Calendar
 google:
