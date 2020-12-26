@@ -49,3 +49,8 @@ spotify:
 # Text to speech
 tts:
   platform: google_translate
+  cache: True
+  cache_dir: /tmp/tts
+  time_memory: 300
+  service_name: google_say
+  
