@@ -38,7 +38,7 @@ http:
   server_port: !secret server_port
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
-  ip_ban_enabled: True
+  ip_ban_enabled: true
   login_attempts_threshold: 3
 
 # Spotify
@@ -49,8 +49,9 @@ spotify:
 # Text to speech
 tts:
   platform: google_translate
-  cache: True
+  cache: true
   cache_dir: /tmp/tts
   time_memory: 300
   service_name: google_say
+  language: en-uk
   
