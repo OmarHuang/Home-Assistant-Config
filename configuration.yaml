@@ -1,6 +1,9 @@
 # Example configuration.yaml entry
 default_config:
 
+homeassistant:
+  customize: !include customize.yaml
+  
 # Google Assistant
 google_assistant:
   project_id: !secret project_id
@@ -32,6 +35,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
 
 # https
 http:
