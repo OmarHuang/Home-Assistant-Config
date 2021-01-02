@@ -50,6 +50,7 @@ spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
 
+# Sensor
 sensor:
   - platform: systemmonitor
     resources:
@@ -64,6 +65,11 @@ sensor:
       - type: throughput_network_out
         arg: hassio
 
+# Switch
+switch:
+  - platform: wake_on_lan
+    mac: !secret desktop_mac
+    
 # Text to speech
 tts:
   platform: google_translate
