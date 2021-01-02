@@ -50,6 +50,20 @@ spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
 
+sensor:
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: processor_use
+      - type: last_boot
+      - type: memory_use_percent
+      - type: processor_temperature
+      - type: throughput_network_in
+        arg: hassio
+      - type: throughput_network_out
+        arg: hassio
+
 # Text to speech
 tts:
   platform: google_translate
