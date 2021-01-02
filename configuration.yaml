@@ -3,7 +3,7 @@ default_config:
 
 homeassistant:
   customize: !include customize.yaml
-  
+
 # Google Assistant
 google_assistant:
   project_id: !secret project_id
@@ -31,13 +31,13 @@ google:
   client_secret: !secret google_cal_secret
     
 # Include
-group: !include groups.yaml
 automation: !include automations.yaml
-script: !include scripts.yaml
+binary_sensor: !include binary_sensor.yaml
+group: !include groups.yaml
 scene: !include scenes.yaml
+script: !include scripts.yaml
 
-
-# https
+# Https
 http:
   server_port: !secret server_port
   ssl_certificate: !secret ssl_certificate
@@ -58,4 +58,3 @@ tts:
   time_memory: 300
   service_name: google_say
   language: en-uk
-  
