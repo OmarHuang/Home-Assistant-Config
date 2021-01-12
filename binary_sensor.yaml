@@ -1,13 +1,37 @@
 # Ping
  - platform: ping
    host: 192.168.1.110
-   name: "Nokia 5"
+   name: "Nokia"
    count: 2
    scan_interval: 60
    
  - platform: ping
    host: 192.168.1.112
-   name: "HTC U11"
+   name: "HTC"
+   count: 2
+   scan_interval: 60
+
+ - platform: ping
+   host: 192.168.1.108
+   name: "Desktop"
+   count: 2
+   scan_interval: 60
+
+ - platform: ping
+   host: 192.168.1.111
+   name: "Laptop"
+   count: 2
+   scan_interval: 60
+
+ - platform: ping
+   host: 192.168.1.104
+   name: "Panasonic"
+   count: 2
+   scan_interval: 60
+
+ - platform: ping
+   host: 192.168.1.117
+   name: "Bedroom Door"
    count: 2
    scan_interval: 60
    
