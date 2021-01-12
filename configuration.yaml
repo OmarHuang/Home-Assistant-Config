@@ -60,10 +60,6 @@ sensor:
       - type: last_boot
       - type: memory_use_percent
       - type: processor_temperature
-      - type: throughput_network_in
-        arg: hassio
-      - type: throughput_network_out
-        arg: hassio
 
 # Switch
 switch:
