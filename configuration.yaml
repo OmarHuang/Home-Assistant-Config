@@ -65,6 +65,13 @@ sensor:
 switch:
   - platform: wake_on_lan
     mac: !secret desktop_mac
+    name: "Desktop"
+    host: 192.168.1.108
+    turn_off:
+      service: hassio.addon_stdin
+      data:
+        addon: core_rpc_shutdown
+        input: Desktop
     
 # Text to speech
 tts:
