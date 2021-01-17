@@ -24,14 +24,13 @@
    scan_interval: 60
 
  - platform: ping
-   host: 192.168.1.104
-   name: "Panasonic"
-   count: 2
-   scan_interval: 60
+   host: 192.168.1.117
+   name: "Main Door"
+   count: 1
+   scan_interval: 1
 
  - platform: ping
-   host: 192.168.1.117
-   name: "Bedroom Door"
-   count: 2
-   scan_interval: 60
-   
+   host: 192.168.1.118
+   name: "Motion Sensor"
+   count: 1
+   scan_interval: 1
