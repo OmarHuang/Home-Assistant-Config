@@ -4,6 +4,11 @@ default_config:
 homeassistant:
   customize: !include customize.yaml
 
+camera:
+  - platform: ffmpeg
+    name: Tapo C100
+    input: !secret camera_input
+
 # Google Assistant
 google_assistant:
   project_id: !secret project_id
