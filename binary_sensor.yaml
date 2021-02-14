@@ -9,27 +9,3 @@
   name: "HTC"
   count: 2
   scan_interval: 30
-
-#- platform: ping
-#  host: 192.168.1.108
-#  name: "Desktop"
-#  count: 2
-#  scan_interval: 60
-
-#- platform: ping
-#  host: 192.168.1.111
-#  name: "Laptop"
-#  count: 2
-#  scan_interval: 60
-
-#- platform: ping
-#  host: 192.168.1.117
-#  name: "Main Door"
-#  count: 1
-#  scan_interval: 1
-
-#- platform: ping
-#  host: 192.168.1.118
-#  name: "Motion Sensor"
-#  count: 1
-#  scan_interval: 1
