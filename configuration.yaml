@@ -1,34 +1,18 @@
 # Example configuration.yaml entry
 default_config:
 
+# Config
+discovery:
+wake_on_lan:
+
 homeassistant:
   customize: !include customize.yaml
 
+# Camera
 camera:
   - platform: ffmpeg
-    name: Tapo C100
+    name: D-Link Tapo C100
     input: !secret camera_input
-
-# Google Assistant
-google_assistant:
-  project_id: !secret project_id
-  report_state: true
-  service_account: !include Google_assistant.json
-  exposed_domains:
-    - switch
-    - light
-    - media_player
-    - scene
-    - climate
-    - cover
-    - person
-    - fan
-    - automation
-    - remote
-    - input_boolean
-    - sensor
-    - binary_sensor
-    - device_tracker
     
 # Google Calendar
 google:
@@ -38,9 +22,11 @@ google:
 # Include
 automation: !include automations.yaml
 binary_sensor: !include binary_sensor.yaml
+google_assistant: !include google_assistant.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
+switch: !include switches.yaml
 
 # Https
 http:
@@ -66,18 +52,6 @@ sensor:
       - type: memory_use_percent
       - type: processor_temperature
 
-# Switch
-switch:
-  - platform: wake_on_lan
-    mac: !secret desktop_mac
-    name: "Desktop"
-    host: 192.168.1.108
-    turn_off:
-      service: hassio.addon_stdin
-      data:
-        addon: core_rpc_shutdown
-        input: Desktop
-    
 # Text to speech
 tts:
   platform: google_translate
