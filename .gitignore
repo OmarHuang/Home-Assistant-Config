@@ -1,11 +1,9 @@
-secrets.yaml
-ip_bans.yaml
-home-assistant.log
-tts
 .cloud
-deps
-.storage
 .google*
-Google*
-google*
+.storage
+deps
 home-assistant_v2.db
+home-assistant.log
+ip_bans.yaml
+secrets.yaml
+tts
