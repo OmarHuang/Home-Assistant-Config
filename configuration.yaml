@@ -6,13 +6,6 @@ discovery:
 wake_on_lan:
 homeassistant:
   customize: !include customize.yaml
-    
-# Google Calendar
-google:
-  client_id: !secret google_cal_id
-  client_secret: !secret google_cal_secret
-    
-# Include
 automation: !include automations.yaml
 binary_sensor: !include binary_sensor.yaml
 google_assistant: !include google_assistant.yaml
@@ -20,6 +13,11 @@ group: !include groups.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 switch: !include switches.yaml
+
+# Google Calendar
+google:
+  client_id: !secret google_cal_id
+  client_secret: !secret google_cal_secret
 
 # Https
 http:
@@ -47,9 +45,8 @@ sensor:
 
 # Text to speech
 tts:
-  platform: google_translate
-  cache: true
-  cache_dir: /tmp/tts
-  time_memory: 300
-  service_name: google_say
-  language: en-uk
+  - platform: google_translate
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+    service_name: google_say
