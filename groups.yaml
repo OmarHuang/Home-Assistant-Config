@@ -1,0 +1,14 @@
+Family:
+  - person.omar
+  - person.p_m_wu
+
+Phone:
+  - binary_sensor.nokia
+  - binary_sensor.htc
+
+Speaker:
+  - media_player.home
+  - media_player.nest
+  - media_player.sony
+  - media_player.lenovo
+  - media_player.hub
