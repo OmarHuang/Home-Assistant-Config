@@ -1,0 +1,19 @@
+project_id: !secret google_project_id
+service_account: 
+  private_key: !secret google_private_key
+  client_email: !secret google_client_email
+report_state: true
+exposed_domains:
+  - switch
+  - light
+  - scene
+  - climate
+  - cover
+  - fan
+  - automation
+  - remote
+  - binary_sensor
+  - script
+  - sensor
+  - camera
+  
