@@ -4,15 +4,8 @@ default_config:
 # Config
 discovery:
 wake_on_lan:
-
 homeassistant:
   customize: !include customize.yaml
-
-# Camera
-camera:
-  - platform: ffmpeg
-    name: D-Link Tapo C100
-    input: !secret camera_input
     
 # Google Calendar
 google:
