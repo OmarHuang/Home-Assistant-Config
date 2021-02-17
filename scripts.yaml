@@ -1,0 +1,46 @@
+camera_on:
+  alias: Camera on
+  sequence:
+  - service: tapo_control.set_privacy_mode
+    data:
+      entity_id: camera.camera_hd
+      privacy_mode: 'off'
+  mode: single
+camera_off:
+  alias: Camera off
+  sequence:
+  - service: tapo_control.set_privacy_mode
+    data:
+      entity_id: camera.camera_hd
+      privacy_mode: 'on'
+  mode: single
+game_mode_on:
+  alias: Game mode on
+  sequence:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.desktop, switch.tv_power, switch.tv_light
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.tv_hdmi, switch.soundbar_desktop
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.tv_hdmi
+  mode: single
+game_mode_off:
+  alias: Game mode off
+  sequence:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.desktop, switch.tv_power, switch.tv_light
+  mode: single
