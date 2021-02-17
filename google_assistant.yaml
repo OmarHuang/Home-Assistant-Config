@@ -4,16 +4,17 @@ service_account:
   client_email: !secret google_client_email
 report_state: true
 exposed_domains:
-  - switch
-  - light
-  - scene
+  - alarm_control_panel
+  - automation
+  - binary_sensor
+  - camera
   - climate
   - cover
   - fan
-  - automation
-  - remote
-  - binary_sensor
+  - input_boolean
+  - input_select
+  - light
+  - scene
   - script
   - sensor
-  - camera
-  
+  - switch
