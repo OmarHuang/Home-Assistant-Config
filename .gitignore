@@ -1,5 +1,5 @@
 .cloud
-.google*
+.google.token
 .storage
 deps
 home-assistant_v2.db
