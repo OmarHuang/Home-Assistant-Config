@@ -1,11 +1,11 @@
 - platform: ping
-  host: 192.168.1.110
-  name: "Nokia"
-  count: 2
-  scan_interval: 60
-  
-- platform: ping
-  host: 192.168.1.112
+  host: !secret htc_ip
   name: "HTC"
-  count: 2
-  scan_interval: 60
+  count: 1
+  scan_interval: 10
+
+- platform: ping
+  host: !secret nokia_ip
+  name: "Nokia"
+  count: 1
+  scan_interval: 10
