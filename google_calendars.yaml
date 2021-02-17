@@ -1,0 +1,35 @@
+
+- cal_id: !secret omar_cal_id
+  entities:
+  - device_id: omar_calendar
+    ignore_availability: true
+    name: Omar Calendar
+    track: true
+
+- cal_id: en.taiwan#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: holidays_in_taiwan
+    ignore_availability: true
+    name: Holidays in Taiwan
+    track: true
+
+- cal_id: addressbook#contacts@group.v.calendar.google.com
+  entities:
+  - device_id: birthdays
+    ignore_availability: true
+    name: Birthdays
+    track: true
+
+- cal_id: family05062714477827814515@group.calendar.google.com
+  entities:
+  - device_id: family_calendar
+    ignore_availability: true
+    name: Family
+    track: true
+
+- cal_id: !secret huang_cal_id
+  entities:
+  - device_id: huang_calendar
+    ignore_availability: true
+    name: Huang Calendar
+    track: true
