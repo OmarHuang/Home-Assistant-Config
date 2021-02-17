@@ -2,10 +2,12 @@
 default_config:
 
 # Config
-discovery:
+discovery: 
 wake_on_lan:
+
 homeassistant:
   customize: !include customize.yaml
+  
 automation: !include automations.yaml
 binary_sensor: !include binary_sensor.yaml
 google_assistant: !include google_assistant.yaml
@@ -27,11 +29,6 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
-# Spotify
-spotify:
-  client_id: !secret spotify_id
-  client_secret: !secret spotify_secret
-
 # Sensor
 sensor:
   - platform: systemmonitor
@@ -42,6 +39,11 @@ sensor:
       - type: last_boot
       - type: memory_use_percent
       - type: processor_temperature
+
+# Spotify
+spotify:
+  client_id: !secret spotify_id
+  client_secret: !secret spotify_secret
 
 # Text to speech
 tts:
