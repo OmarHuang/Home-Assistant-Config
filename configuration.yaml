@@ -11,6 +11,7 @@ homeassistant:
 automation: !include automations.yaml
 binary_sensor: !include binary_sensor.yaml
 google_assistant: !include google_assistant.yaml
+input_boolean: !include input_boolean.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
