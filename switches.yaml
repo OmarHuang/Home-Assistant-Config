@@ -13,7 +13,7 @@
     - name: "soundbar display"
       command_on: "JgDMAEsWJhUmFhIVJhYSFRIWJhUSFhIVEhYSFiUWJhUTFRIAArRNFiUWJhUTFSYVExUSFiUWEhYSFRIWExQmFiYVEhYSAAKzThUmFiYVEhYmFRIWExQmFhIVEhYSFRMVJhUmFhIVEwACs04VJhUmFhIVJhYSFRIWJhUTFRIVExUSFiYVJhUTFRIAArRNFiYVJhUTFSYVExUTFSYVExUSFRIWEhUmFiYVEhYSAAK0TRYlFiYVEhYmFRMVEhYlFhIWEhUSFhIVJhYmFRIWEgANBQAAAAAAAAAAAAA="
       command_off: "JgDMAEsWJhUmFhIVJhYSFRIWJhUSFhIVEhYSFiUWJhUTFRIAArRNFiUWJhUTFSYVExUSFiUWEhYSFRIWExQmFiYVEhYSAAKzThUmFiYVEhYmFRIWExQmFhIVEhYSFRMVJhUmFhIVEwACs04VJhUmFhIVJhYSFRIWJhUTFRIVExUSFiYVJhUTFRIAArRNFiYVJhUTFSYVExUTFSYVExUSFRIWEhUmFiYVEhYSAAK0TRYlFiYVEhYmFRMVEhYlFhIWEhUSFhIVJhYmFRIWEgANBQAAAAAAAAAAAAA="
-    - name: "sounbar vertical"
+    - name: "soundbar vertical"
       command_on: "JgDcAEwVEhYmFScUJhYmFSYWJhUSFhIVEhYSFSYWEhUTFRMVJhUSFiYVExUSAAGyTRYSFSYWJhUmFiYVJhUmFhIVExUSFhIVJhYSFRIWEhUnFRIVJhYSFRMAAbJNFhIVJhYmFSYVJhYmFSYWExQTFRMUExUnFBMVEhYSFSYWEhUmFhIVEgABs00WEhUmFSYWJhUmFiYVJhUTFRIWEhUSFiYVExUSFRIWJhUSFiYVExUSAAGyThUSFiYVJhYmFSYVJhYnFBIWEhUTFRIWJhUSFhIVEhYmFRIWJhUSFhIADQUAAAAAAAAAAAAA"
       command_off: "JgDcAEwVEhYmFScUJhYmFSYWJhUSFhIVEhYSFSYWEhUTFRMVJhUSFiYVExUSAAGyTRYSFSYWJhUmFiYVJhUmFhIVExUSFhIVJhYSFRIWEhUnFRIVJhYSFRMAAbJNFhIVJhYmFSYVJhYmFSYWExQTFRMUExUnFBMVEhYSFSYWEhUmFhIVEgABs00WEhUmFSYWJhUmFiYVJhUTFRIWEhUSFiYVExUSFRIWJhUSFiYVExUSAAGyThUSFiYVJhYmFSYVJhYnFBIWEhUTFRIWJhUSFhIVEhYmFRIWJhUSFhIADQUAAAAAAAAAAAAA"
     - name: "soundbar desktop"
@@ -46,14 +46,36 @@
 
 - platform: template
   switches:
+    alarm_on_off:
+      friendly_name: "Alarm system"
+      turn_on:
+        service: tapo_control.set_alarm_mode
+        data:
+          entity_id: camera.camera_hd
+          alarm_mode: 'on'
+          sound: 'on'
+          light: 'on'
+      turn_off:
+        service: tapo_control.set_alarm_mode
+        data:
+          entity_id: camera.camera_hd
+          alarm_mode: 'off'
+          sound: 'off'
+          light: 'on'
     camera_on_off:
       friendly_name: "Tapo C100"
       turn_on:
-        service: script.camera_on
+        service: tapo_control.set_privacy_mode
+        data:
+          entity_id: camera.camera_hd
+          privacy_mode: 'off'
       turn_off:
-        service: script.camera_off
+        service: tapo_control.set_privacy_mode
+        data:
+          entity_id: camera.camera_hd
+          privacy_mode: 'on'
     game_mode_on_off:
-      friendly_name: "Game Mode"
+      friendly_name: "Game mode"
       turn_on:
         service: script.game_mode_on
       turn_off:
