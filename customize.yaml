@@ -1,2 +1,85 @@
+# Switch
+switch.tv_power:
+  icon: mdi:remote
+  initial_state: off
+
+switch.tv_nextflix:
+  icon: mdi:remote
+  initial_state: off
+
+switch.tv_youtube:
+  icon: mdi:remote
+  initial_state: off
+
+switch.tv_hdmi:
+  icon: mdi:remote
+  initial_state: off
+
+switch.tv_mute:
+  assumed_state: false
+  icon: mdi:remote
+  initial_state: off
+
+switch.soundbar_power:
+  icon: mdi:remote
+  initial_state: off
+
+switch.soundbar_desktop:
+  icon: mdi:remote
+  initial_state: off
+
+switch.soundbar_laptop:
+  icon: mdi:remote
+  initial_state: off
+
+switch.soundbar_tv:
+  icon: mdi:remote
+  initial_state: off
+
+switch.soundbar_mute:
+  assumed_state: false
+  icon: mdi:remote
+  initial_state: off
+
+switch.soundbar_volume:
+  icon: mdi:remote
+  initial_state: off
+
+switch.soundbar_display:
+  assumed_state: false
+  icon: mdi:remote
+  initial_state: off
+
+switch.soundbar_vertical:
+  assumed_state: false
+  icon: mdi:remote
+  initial_state: on
+
+switch.soundbar_ok:
+  icon: mdi:remote
+  initial_state: off
+
+switch.game_mode_on_off:
+  assumed_state: false
+  icon: mdi:gamepad-variant
+  initial_state: off
+
+switch.alarm_on_off:
+  assumed_state: false
+  icon: mdi:alarm-light
+  initial_state: off
+
+switch.camera_on_off:
+  assumed_state: false
+  icon: mdi:cctv
+  initial_state: off
+
+switch.desktop:
+  icon: mdi:desktop-tower
+
+switch.laptop:
+  icon: mdi:laptop-chromebook
+
+# Zone
 zone.home:
   radius: 50
