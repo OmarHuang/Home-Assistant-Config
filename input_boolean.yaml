@@ -1,7 +1,0 @@
-# Automation
-game_mode:
-  name: Game Mode
-  icon: mdi:gamepad-variant
-tapo_c100:
-  name: Tapo C100
-  icon: mdi:cctv

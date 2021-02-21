@@ -7,14 +7,18 @@ wake_on_lan:
 
 homeassistant:
   customize: !include customize.yaml
-  
+
+alarm_control_panel: !include alarm_control_panel.yaml
 automation: !include automations.yaml
 binary_sensor: !include binary_sensor.yaml
 google_assistant: !include google_assistant.yaml
-input_boolean: !include input_boolean.yaml
 group: !include groups.yaml
+input_boolean: !include input_boolean.yaml
+input_select: !include input_select.yaml
+input_text: !include input_text.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
+sensor: !include sensors.yaml
 switch: !include switches.yaml
 
 # Google Calendar
@@ -29,17 +33,6 @@ http:
   ssl_key: !secret ssl_key
   ip_ban_enabled: true
   login_attempts_threshold: 3
-
-# Sensor
-sensor:
-  - platform: systemmonitor
-    resources:
-      - type: disk_use_percent
-        arg: /
-      - type: processor_use
-      - type: last_boot
-      - type: memory_use_percent
-      - type: processor_temperature
 
 # Spotify
 spotify:
