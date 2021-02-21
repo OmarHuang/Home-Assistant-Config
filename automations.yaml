@@ -63,11 +63,15 @@
   description: ''
   trigger:
   - platform: state
-    from: discharging
     to: charging
     entity_id: sensor.nokia_battery_state
   condition: []
   action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
   - service: light.turn_off
     data: {}
     entity_id: light.bedroom
@@ -77,22 +81,143 @@
   description: ''
   trigger:
   - platform: state
-    entity_id: group.family
-    to: home
-  - platform: state
-    entity_id: group.phone
+    entity_id: binary_sensor.camera_motion
     to: 'on'
-  condition:
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: group.family
-      state: home
-    - condition: state
-      entity_id: group.phone
-      state: 'on'
+  condition: []
   action:
   - service: switch.turn_on
     data: {}
     entity_id: switch.tv_light
+  mode: single
+- id: '1613912863622'
+  alias: Turn on alarm trigger
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.camera_motion
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_away
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: group.family
+      state: not_home
+  action:
+  - service: notify.notify
+    data:
+      message: Motion detected someone at home!
+  - service: media_player.media_play
+    data:
+      entity_id: group.speaker
+      media_content_type: music
+      media_content_id: media-source://media_source/local/Alarm.mp3
+  mode: single
+- id: '1613913011922'
+  alias: Turn off alarm trigger
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.camera_motion
+    to: 'off'
+  condition: []
+  action:
+  - service: media_player.stop
+    data:
+      entity_id: group.speaker
+  mode: single
+- id: '1613916020645'
+  alias: Turn on alarm system
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: armed_away
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.camera_on_off
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.alarm_on_off
+  - service: notify.notify
+    data:
+      message: Alarm system is online!
+  mode: single
+- id: '1613916123236'
+  alias: Turn off alarm system
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: disarmed
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.camera_on_off
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.alarm_on_off
+  - service: notify.notify
+    data:
+      message: Alarm system is offline!
+  mode: single
+- id: '1613919064454'
+  alias: Turn on bedroom light
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:59'
+  condition: []
+  action:
+  - service: light.turn_on
+    data: {}
+    entity_id: light.bedroom
+  mode: single
+- id: '1613921281886'
+  alias: Change TV mode
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.tv_mode
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_select.tv_mode
+        state: Youtube
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.tv_youtube
+    - conditions:
+      - condition: state
+        entity_id: input_select.tv_mode
+        state: Netflix
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.tv_nextflix
+    - conditions:
+      - condition: state
+        entity_id: input_select.tv_mode
+        state: HDMI
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.tv_hdmi
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 1
+          milliseconds: 0
+      - service: switch.turn_off
+        data: {}
+        entity_id: switch.tv_hdmi
+    default: []
   mode: single
