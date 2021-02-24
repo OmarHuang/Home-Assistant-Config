@@ -1,4 +1,6 @@
 # Home Assistant Config
+  This is my [Home Assistant](https://www.home-assistant.io/) configurations and automations that I use for everyday.
+
 
 # Devices that I use
   * Camera
