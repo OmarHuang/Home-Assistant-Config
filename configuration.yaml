@@ -34,6 +34,14 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
+# Rest
+rest_command:
+  assistant_relay:
+    url: !secret rest_url
+    method: 'post'
+    content_type: 'application/json'
+    payload: '{"user": "Omar", "command": "{{ message }}"}'
+
 # Spotify
 spotify:
   client_id: !secret spotify_id
