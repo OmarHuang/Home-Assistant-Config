@@ -1,26 +1,14 @@
-- id: '1609602252443'
-  alias: Turn off living room lights
+- id: '1613966165791'
+  alias: Tag Office is scanned
   description: ''
   trigger:
-  - platform: state
-    entity_id: group.family
-    to: not_home
-  - platform: state
-    entity_id: group.phone
-    to: 'off'
-  condition:
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: group.family
-      state: not_home
-    - condition: state
-      entity_id: group.phone
-      state: 'off'
+  - platform: tag
+    tag_id: a4f8caa1-955c-4c8c-a192-6691badedeba
+  condition: []
   action:
-  - service: switch.turn_off
-    data: {}
-    entity_id: switch.tv_light
+  - service: notify.mobile_app_htc
+    data:
+      message: Omar is coming home!
   mode: single
 - id: '1610029670345'
   alias: Tag Living Room is scanned
@@ -65,16 +53,43 @@
   - platform: state
     to: charging
     entity_id: sensor.nokia_battery_state
-  condition: []
+  condition:
+  - condition: state
+    entity_id: person.omar
+    state: home
   action:
   - delay:
       hours: 0
       minutes: 0
-      seconds: 30
+      seconds: 10
       milliseconds: 0
   - service: light.turn_off
     data: {}
     entity_id: light.bedroom
+  mode: single
+- id: '1609602252443'
+  alias: Turn off living room lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.family
+    to: not_home
+  - platform: state
+    entity_id: group.phone
+    to: 'off'
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: group.family
+      state: not_home
+    - condition: state
+      entity_id: group.phone
+      state: 'off'
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.tv_light
   mode: single
 - id: '1613457968409'
   alias: Turn on living room lights
@@ -172,7 +187,10 @@
   trigger:
   - platform: time
     at: '23:59'
-  condition: []
+  condition:
+  - condition: state
+    entity_id: person.omar
+    state: home
   action:
   - service: light.turn_on
     data: {}
@@ -221,3 +239,4 @@
         entity_id: switch.tv_hdmi
     default: []
   mode: single
+
