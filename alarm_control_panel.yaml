@@ -1,5 +1,5 @@
 - platform: manual
-  name: Home Alarm
+  name: Alarm system
   code: !secret alarm_code
   arming_time: 30
   delay_time: 20
