@@ -66,7 +66,7 @@
       entity_id: light.bedroom
   mode: single
 - id: '1609602252443'
-  alias: Turn off living room lights
+  alias: Turn off living room light
   description: ''
   trigger:
   - platform: state
@@ -90,7 +90,7 @@
     entity_id: switch.movie_light
   mode: single
 - id: '1613457968409'
-  alias: Turn on living room lights
+  alias: Turn on living room light
   description: ''
   trigger:
   - platform: state
@@ -238,7 +238,7 @@
     default: []
   mode: single
 - id: '1615043315433'
-  alias: Turn on study lights
+  alias: Turn on study light
   description: ''
   trigger:
   - platform: state
@@ -262,4 +262,17 @@
       - service: switch.turn_off
         target:
           entity_id: switch.movie_light
+  mode: single
+- id: '1615126056334'
+  alias: Turn off study light
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.motion_sensor
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.movie_light
   mode: single

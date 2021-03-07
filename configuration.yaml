@@ -35,12 +35,6 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
-# Logger
-logger:
-  default: warning
-  logs:
-    custom_components.localtuya: debug
-
 # Rest
 rest_command:
   assistant_relay:
