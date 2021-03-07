@@ -1,9 +1,68 @@
-# System
+- platform: scrape
+  name: Price 95
+  resource: https://vipmember.tmtd.cpc.com.tw/mbwebs/ShowListPrice.aspx?prodtype=1
+  scan_interval: 86400
+  select: 'tr:nth-of-type(5) td[align]'
+  headers:
+    User-Agent: 'Mozilla/5.0'
+
+- platform: scrape
+  name: Price 98
+  resource: https://vipmember.tmtd.cpc.com.tw/mbwebs/ShowListPrice.aspx?prodtype=1
+  scan_interval: 86400
+  select: 'tr:nth-of-type(2) td[align]'
+  headers:
+    User-Agent: 'Mozilla/5.0'
+
+- platform: scrape
+  name: Price kerosene
+  resource: https://vipmember.tmtd.cpc.com.tw/mbwebs/ShowListPrice.aspx?prodtype=3
+  scan_interval: 86400
+  select: 'tr:nth-of-type(2) td[align]'
+  headers:
+    User-Agent: 'Mozilla/5.0'
+
+- platform: scrape
+  name: Price kerosene canned
+  resource: https://vipmember.tmtd.cpc.com.tw/mbwebs/ShowListPrice.aspx?prodtype=3
+  scan_interval: 86400
+  select: 'tr:nth-of-type(5) td[align]'
+  headers:
+    User-Agent: 'Mozilla/5.0'
+
+- platform: scrape
+  name: 2330
+  resource: https://histock.tw/stock/2330
+  scan_interval: 86400
+  select: '#Price1_lbTPrice span'
+  headers:
+    User-Agent: 'Mozilla/5.0'
+
+- platform: scrape
+  name: 2317
+  resource: https://histock.tw/stock/2317
+  scan_interval: 86400
+  select: '#Price1_lbTPrice span'
+  headers:
+    User-Agent: 'Mozilla/5.0'
+
+- platform: scrape
+  name: 2603
+  resource: https://histock.tw/stock/2603
+  scan_interval: 86400
+  select: '#Price1_lbTPrice span'
+  headers:
+    User-Agent: 'Mozilla/5.0'
+
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
       arg: /
-    - type: processor_use
     - type: last_boot
     - type: memory_use_percent
     - type: processor_temperature
+    - type: processor_use
+    - type: throughput_network_in
+      arg: enp3s0
+    - type: throughput_network_out
+      arg: enp3s0
