@@ -87,7 +87,7 @@
   action:
   - service: switch.turn_off
     data: {}
-    entity_id: switch.tv_light
+    entity_id: switch.movie_light
   mode: single
 - id: '1613457968409'
   alias: Turn on living room lights
@@ -100,7 +100,7 @@
   action:
   - service: switch.turn_on
     data: {}
-    entity_id: switch.tv_light
+    entity_id: switch.movie_light
   mode: single
 - id: '1613912863622'
   alias: Turn on alarm trigger
@@ -236,4 +236,30 @@
         data: {}
         entity_id: switch.tv_hdmi
     default: []
+  mode: single
+- id: '1615043315433'
+  alias: Turn on study lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.door_sensor
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.door_sensor
+        state: 'on'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.movie_light
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.door_sensor
+        state: 'off'
+      sequence:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.movie_light
   mode: single

@@ -1,3 +1,25 @@
+# Sensor
+sensor.price_95:
+  icon: mdi:oil
+
+sensor.price_98:
+  icon: mdi:oil
+
+sensor.price_kerosene:
+  icon: mdi:oil
+
+sensor.price_kerosene_canned:
+  icon: mdi:oil
+
+sensor.2317:
+  icon: mdi:scale-balance
+
+sensor.2330:
+  icon: mdi:scale-balance
+
+sensor.2603:
+  icon: mdi:scale-balance
+
 # Switch
 switch.tv_power:
   icon: mdi:remote

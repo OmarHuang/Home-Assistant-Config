@@ -3,7 +3,7 @@ game_mode_on:
   sequence:
   - service: switch.turn_on
     data: {}
-    entity_id: switch.desktop, switch.tv_power, switch.tv_light
+    entity_id: switch.desktop, switch.tv_power, switch.movie_light
   - delay:
       hours: 0
       minutes: 0
@@ -26,5 +26,5 @@ game_mode_off:
   sequence:
   - service: switch.turn_off
     data: {}
-    entity_id: switch.desktop, switch.tv_power, switch.tv_light
+    entity_id: switch.desktop, switch.tv_power, switch.movie_light
   mode: single

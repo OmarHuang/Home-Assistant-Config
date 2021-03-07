@@ -38,21 +38,21 @@
   protocol_version: "3.3"
   entities:
     - platform: binary_sensor
-      friendly_name: Plug Status
+      friendly_name: Door sensor
       id: 1
       device_class: door
       state_on: "true" # Optional
       state_off: "false" # Optional
 
-- host: !secret christmas_host
-  device_id: !secret christmas_id
-  local_key: !secret christmas_key
-  friendly_name: Christmas light
+- host: !secret motion_host
+  device_id: !secret motion_id
+  local_key: !secret motion_key
+  friendly_name: Motion Sensor
   protocol_version: "3.3"
   entities:
-    - platform: switch
-      friendly_name: Christmas light
+    - platform: binary_sensor
+      friendly_name: Motion sensor
       id: 1
-      current: 1 # Optional
-      current_consumption: 1 # Optional
-      voltage: 1 # Optional
+      device_class: motion
+      state_on: "true" # Optional
+      state_off: "false" # Optional
