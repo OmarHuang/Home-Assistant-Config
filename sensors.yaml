@@ -33,7 +33,7 @@
 - platform: scrape
   name: 2330
   resource: https://histock.tw/stock/2330
-  scan_interval: 86400
+  scan_interval: 3600
   select: '#Price1_lbTPrice span'
   headers:
     User-Agent: 'Mozilla/5.0'
@@ -41,7 +41,7 @@
 - platform: scrape
   name: 2317
   resource: https://histock.tw/stock/2317
-  scan_interval: 86400
+  scan_interval: 3600
   select: '#Price1_lbTPrice span'
   headers:
     User-Agent: 'Mozilla/5.0'
@@ -49,7 +49,7 @@
 - platform: scrape
   name: 2603
   resource: https://histock.tw/stock/2603
-  scan_interval: 86400
+  scan_interval: 3600
   select: '#Price1_lbTPrice span'
   headers:
     User-Agent: 'Mozilla/5.0'
