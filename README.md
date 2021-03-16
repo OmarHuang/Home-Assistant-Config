@@ -10,6 +10,7 @@
   * Remote
     * [Brodlink RM4](https://www.amazon.com/Broadlink-RM4-Universal-Control-Compatible/dp/B07ZSF46BX)
   * Sensors
+    * [Brodlink HTS2 Sensor Accessory](https://www.amazon.com/Broadlink-Accessory-Temperature-Humidity-Monitor/dp/B081F3C4T4?language=en_US&th=1)
     * [Tuya Door Sensor](https://expo.tuya.com/product/790054)
     * [Tuya Motion Sensor](https://expo.tuya.com/product/374497)
   * Speakers
@@ -21,3 +22,5 @@
   * Switches 
     * [Tuya Smart Socket](https://expo.tuya.com/product/373725)
     * [Tuya Wifi Switch](https://expo.tuya.com/product/724008)
+  * TV
+    * [Chromecast with Google TV](https://store.google.com/us/product/chromecast_google_tv?hl=en-US)
