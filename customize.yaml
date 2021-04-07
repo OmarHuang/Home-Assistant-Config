@@ -102,6 +102,28 @@ switch.desktop:
 switch.laptop:
   icon: mdi:laptop-chromebook
 
+switch.gree_speed:
+  icon: mdi:fan
+  initial_state: off
+
+switch.gree_power:
+  icon: mdi:fan
+  initial_state: off
+
+switch.gree_spin:
+  assumed_state: false
+  icon: mdi:fan
+  initial_state: off
+
+switch.teco_speed:
+  icon: mdi:fan
+  initial_state: off
+
+switch.teco_power:
+  assumed_state: false
+  icon: mdi:fan
+  initial_state: off
+
 # Zone
 zone.home:
   radius: 50
