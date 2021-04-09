@@ -58,7 +58,7 @@
   - delay:
       hours: 0
       minutes: 0
-      seconds: 10
+      seconds: 5
       milliseconds: 0
   - service: light.turn_off
     data: {}
@@ -111,22 +111,27 @@
     to: 'on'
   condition:
   - condition: state
-    entity_id: alarm_control_panel.home_alarm
+    entity_id: alarm_control_panel.alarm_system
     state: armed_away
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: group.family
-      state: not_home
   action:
   - service: notify.notify
     data:
       message: Motion detected someone at home!
-  - service: media_player.media_play
+  - service: media_player.play_media
     data:
-      entity_id: group.speaker
       media_content_type: music
       media_content_id: media-source://media_source/local/Alarm.mp3
+    target:
+      entity_id:
+      - media_player.nest
+      - media_player.lenovo
+  - service: camera.record
+    data:
+      filename: /media/movement_{{ now().strftime("%Y%m%d-%H%M%S") }}.mp4
+      duration: 10
+      lookback: 10
+    target:
+      entity_id: camera.camera_hd
   mode: single
 - id: '1613913011922'
   alias: Turn off alarm trigger
@@ -137,16 +142,18 @@
     to: 'off'
   condition: []
   action:
-  - service: media_player.stop
-    data:
-      entity_id: group.speaker
+  - service: media_player.turn_off
+    target:
+      entity_id:
+      - media_player.nest
+      - media_player.lenovo
   mode: single
 - id: '1613916020645'
   alias: Turn on alarm system
   description: ''
   trigger:
   - platform: state
-    entity_id: alarm_control_panel.home_alarm
+    entity_id: alarm_control_panel.alarm_system
     to: armed_away
   condition: []
   action:
@@ -165,7 +172,7 @@
   description: ''
   trigger:
   - platform: state
-    entity_id: alarm_control_panel.home_alarm
+    entity_id: alarm_control_panel.alarm_system
     to: disarmed
   condition: []
   action:

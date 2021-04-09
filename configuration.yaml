@@ -2,7 +2,8 @@
 default_config:
 
 # Config
-discovery: 
+discovery:
+stream:
 wake_on_lan:
 
 homeassistant:
@@ -42,6 +43,8 @@ rest_command:
     method: 'post'
     content_type: 'application/json'
     payload: '{"user": "Omar", "command": "{{ message }}"}'
+  # p00c_command:
+  #   url: !secret p00c_commands
 
 # Spotify
 spotify:
