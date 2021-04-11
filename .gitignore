@@ -1,9 +1,11 @@
 .cloud
 .google.token
 .storage
+.HA_VERSION
 deps
 home-assistant_v2.db
 home-assistant.log
 ip_bans.yaml
+known_devices.yaml
 secrets.yaml
 tts
