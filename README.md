@@ -7,6 +7,8 @@
     * [TP-Link C100](https://www.kasasmart.com/us/products/security-cameras/kasa-cam-spot-kc100)
   * Light
     * [Tuya Light Bulb](https://expo.tuya.com/product/326222)
+  * Network
+    * [Netgear R6900](https://www.amazon.com/NETGEAR-Nighthawk-AC1900-Smart-Router/dp/B01I5T9KVC)
   * Remote
     * [Brodlink RM4](https://www.amazon.com/Broadlink-RM4-Universal-Control-Compatible/dp/B07ZSF46BX)
   * Sensors
@@ -21,6 +23,9 @@
     * [Sony Z9F](https://www.sony.com/electronics/sound-bars/ht-z9f)
   * Switches 
     * [Tuya Smart Socket](https://expo.tuya.com/product/373725)
-    * [Tuya Wifi Switch](https://expo.tuya.com/product/724008)
+    * [Tuya Smart Touch Switch](https://expo.tuya.com/product/798053)
+    * [Tuya Wifi Smart Breaker](https://expo.tuya.com/product/724008)
+    * [Sonoff MINIR2](https://sonoff.tech/product/diy-smart-switch/minir2/)
   * TV
     * [Chromecast with Google TV](https://store.google.com/us/product/chromecast_google_tv?hl=en-US)
+    * [Panasonic 65FX600](https://www.panasonic.com/ca/support/discontinued/televisions-home-entertainment/tc-65fx600.html)
