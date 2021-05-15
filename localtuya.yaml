@@ -11,6 +11,32 @@
       current_consumption: 1 # Optional
       voltage: 1 # Optional
 
+- host: !secret mosquito_host
+  device_id: !secret mosquito_id
+  local_key: !secret mosquito_key
+  friendly_name: Mosquito switch
+  protocol_version: "3.3"
+  entities:
+    - platform: switch
+      friendly_name: Mosquito switch
+      id: 1
+      current: 1 # Optional
+      current_consumption: 1 # Optional
+      voltage: 1 # Optional
+
+- host: !secret smartplug_host
+  device_id: !secret smartplug_id
+  local_key: !secret smartplug_key
+  friendly_name: Christmas light
+  protocol_version: "3.3"
+  entities:
+    - platform: switch
+      friendly_name: Christmas light
+      id: 1
+      current: 18 # Optional
+      current_consumption: 19 # Optional
+      voltage: 20 # Optional
+
 - host: !secret bedroom_host
   device_id: !secret bedroom_id
   local_key: !secret bedroom_key

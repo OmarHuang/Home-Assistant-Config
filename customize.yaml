@@ -126,4 +126,4 @@ switch.teco_power:
 
 # Zone
 zone.home:
-  radius: 50
+  radius: 40
