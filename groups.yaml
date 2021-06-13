@@ -5,6 +5,7 @@ Family:
 Phone:
   - binary_sensor.htc
   - binary_sensor.nokia
+  - binary_sensor.oneplus
 
 Speaker:
   - media_player.home

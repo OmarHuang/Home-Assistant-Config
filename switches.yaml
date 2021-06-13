@@ -117,11 +117,21 @@
       input: Desktop
 
 - platform: wake_on_lan
-  mac: !secret laptop_mac
-  host: !secret laptop_ip
-  name: Laptop
+  mac: !secret acer_mac
+  host: !secret acer_ip
+  name: Acer
   turn_off:
     service: hassio.addon_stdin
     data:
       addon: core_rpc_shutdown
-      input: Laptop
+      input: Acer
+
+- platform: wake_on_lan
+  mac: !secret huawei_mac
+  host: !secret huawei_ip
+  name: Huawei
+  turn_off:
+    service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: Huawei

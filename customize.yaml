@@ -102,6 +102,9 @@ switch.desktop:
 switch.laptop:
   icon: mdi:laptop-chromebook
 
+switch.huawei:
+  icon: mdi:laptop-chromebook
+
 switch.gree_speed:
   icon: mdi:fan
   initial_state: off

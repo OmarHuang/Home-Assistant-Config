@@ -52,7 +52,7 @@
   trigger:
   - platform: state
     to: charging
-    entity_id: sensor.nokia_battery_state
+    entity_id: sensor.oneplus_battery_state
   condition: []
   action:
   - delay:
@@ -63,7 +63,7 @@
   - service: light.turn_off
     data: {}
     target:
-      entity_id: light.bedroom
+      entity_id: light.bedroom_light
   mode: single
 - id: '1609602252443'
   alias: Turn off living room light
@@ -199,7 +199,8 @@
   action:
   - service: light.turn_on
     data: {}
-    entity_id: light.bedroom
+    target:
+      entity_id: light.bedroom_light
   mode: single
 - id: '1613921281886'
   alias: Change TV mode
