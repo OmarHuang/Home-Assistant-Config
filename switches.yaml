@@ -135,3 +135,13 @@
     data:
       addon: core_rpc_shutdown
       input: Huawei
+
+- platform: wake_on_lan
+  mac: !secret lenovo_mac
+  host: !secret lenovo_ip
+  name: Lenovo
+  turn_off:
+    service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: Lenovo

@@ -105,6 +105,9 @@ switch.laptop:
 switch.huawei:
   icon: mdi:laptop-chromebook
 
+switch.lenovo:
+  icon: mdi:laptop-chromebook
+
 switch.gree_speed:
   icon: mdi:fan
   initial_state: off
@@ -123,7 +126,6 @@ switch.teco_speed:
   initial_state: off
 
 switch.teco_power:
-  assumed_state: false
   icon: mdi:fan
   initial_state: off
 
