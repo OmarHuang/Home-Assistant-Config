@@ -21,64 +21,63 @@ sensor.2603:
   icon: mdi:scale-balance
 
 # Switch
-switch.tv_power:
-  icon: mdi:remote
+input_select.tv_mode:
+  icon: mdi:youtube-tv
+  
+switch.panasonic_power:
+  icon: mdi:youtube-tv
   initial_state: off
 
 switch.tv_nextflix:
-  icon: mdi:remote
+  icon: mdi:youtube-tv
   initial_state: off
 
 switch.tv_youtube:
-  icon: mdi:remote
+  icon: mdi:youtube-tv
   initial_state: off
 
 switch.tv_hdmi:
-  icon: mdi:remote
+  icon: mdi:youtube-tv
   initial_state: off
 
 switch.tv_mute:
-  assumed_state: false
-  icon: mdi:remote
+  icon: mdi:youtube-tv
   initial_state: off
 
 switch.soundbar_power:
-  icon: mdi:remote
+  icon: mdi:speaker
   initial_state: off
 
 switch.soundbar_desktop:
-  icon: mdi:remote
+  icon: mdi:speaker
   initial_state: off
 
 switch.soundbar_laptop:
-  icon: mdi:remote
+  icon: mdi:speaker
   initial_state: off
 
 switch.soundbar_tv:
-  icon: mdi:remote
+  icon: mdi:speaker
   initial_state: off
 
 switch.soundbar_mute:
-  assumed_state: false
-  icon: mdi:remote
+  icon: mdi:speaker
   initial_state: off
 
 switch.soundbar_volume:
-  icon: mdi:remote
+  icon: mdi:speaker
   initial_state: off
 
 switch.soundbar_display:
-  assumed_state: false
-  icon: mdi:remote
+  icon: mdi:speaker
   initial_state: off
 
 switch.soundbar_vertical:
-  assumed_state: false
-  icon: mdi:remote
-  initial_state: on
+  icon: mdi:speaker
+  initial_state: off
 
 switch.soundbar_ok:
-  icon: mdi:remote
+  icon: mdi:speaker
   initial_state: off
 
 switch.game_mode_on_off:
@@ -127,6 +126,14 @@ switch.teco_speed:
 
 switch.teco_power:
   icon: mdi:fan
+  initial_state: off
+
+switch.national_power:
+  icon: mdi:air-conditioner
+  initial_state: off
+
+switch.national_volume:
+  icon: mdi:air-conditioner
   initial_state: off
 
 # Zone

@@ -196,6 +196,11 @@
   - condition: state
     entity_id: person.omar
     state: home
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.oneplus_battery_state
+      state: discharging
   action:
   - service: light.turn_on
     data: {}
@@ -283,4 +288,34 @@
   - service: switch.turn_off
     target:
       entity_id: switch.movie_light
+  mode: single
+- id: '1626957363206'
+  alias: Turn off the home mode
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.family
+    to: not_home
+  condition: []
+  action:
+  - service: tapo_control.set_privacy_mode
+    data:
+      privacy_mode: 'off'
+    target:
+      entity_id: camera.camera_hd
+  mode: single
+- id: '1626957484012'
+  alias: Turn on the home mode
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.family
+    to: home
+  condition: []
+  action:
+  - service: tapo_control.set_privacy_mode
+    data:
+      privacy_mode: 'on'
+    target:
+      entity_id: camera.camera_hd
   mode: single
