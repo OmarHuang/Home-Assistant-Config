@@ -3,7 +3,7 @@ game_mode_on:
   sequence:
   - service: switch.turn_on
     data: {}
-    entity_id: switch.desktop, switch.panasonic_power, switch.movie_light
+    entity_id: switch.desktop, switch.panasonic_power
   - delay:
       hours: 0
       minutes: 0
@@ -11,7 +11,7 @@ game_mode_on:
       milliseconds: 0
   - service: switch.turn_on
     data: {}
-    entity_id: switch.tv_hdmi, switch.soundbar_desktop
+    entity_id: switch.tv_hdmi
   - delay:
       hours: 0
       minutes: 0
@@ -20,11 +20,53 @@ game_mode_on:
   - service: switch.turn_off
     data: {}
     entity_id: switch.tv_hdmi
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: switch.turn_on
+    target:
+      entity_id: switch.soundbar_desktop
   mode: single
+  icon: mdi:gamepad-variant
 game_mode_off:
   alias: Game mode off
   sequence:
   - service: switch.turn_off
     data: {}
-    entity_id: switch.desktop, switch.panasonic_power, switch.movie_light
+    entity_id: switch.desktop, switch.panasonic_power
   mode: single
+  icon: mdi:gamepad-variant
+movie_mode_on:
+  sequence:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.movie_light
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.living_light
+  mode: single
+  alias: Movie mode on
+  icon: mdi:movie-roll
+movie_mode_off:
+  alias: Movie mode off
+  sequence:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.living_light
+  - service: switch.turn_off
+    target:
+      entity_id: switch.movie_light
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  mode: single
+  icon: mdi:movie-roll
