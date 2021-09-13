@@ -8,6 +8,12 @@ wake_on_lan:
 
 homeassistant:
   customize: !include customize.yaml
+  currency: USD
+  external_url: !secret external_url
+  internal_url: !secret internal_url
+  media_dirs:
+    local: /media
+    recording: /media/temp
 
 alarm_control_panel: !include alarm_control_panel.yaml
 automation: !include automations.yaml
@@ -44,21 +50,31 @@ http:
   # server_port: !secret server_port
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.0.0.200
+    - 172.30.33.0/24
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
-# Rest
-rest_command:
-  assistant_relay:
-    url: !secret rest_url
-    method: 'post'
-    content_type: 'application/json'
-    payload: '{"user": "Omar", "command": "{{ message }}"}'
+# # Rest
+# rest_command:
+#   assistant_relay:
+#     url: !secret rest_url
+#     method: 'post'
+#     content_type: 'application/json'
+#     payload: '{"user": "Omar", "command": "{{ message }}"}'
 
 # Spotify
 spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
+
+# Sonoff
+sonoff: 
+  username: !secret sonoff_id
+  password: !secret sonoff_password
+  mode: local
 
 # Text to speech
 tts:

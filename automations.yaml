@@ -6,9 +6,12 @@
     tag_id: a4f8caa1-955c-4c8c-a192-6691badedeba
   condition: []
   action:
-  - service: notify.mobile_app_htc
+  - service: notify.mobile_app_htc_u_3u
     data:
-      message: Omar is coming home!
+      message: Coming home
+  - service: notify.mobile_app_le2100
+    data:
+      message: Coming home
   mode: single
 - id: '1610029670345'
   alias: Tag Living Room is scanned
@@ -32,7 +35,8 @@
   action:
   - service: light.toggle
     data: {}
-    entity_id: light.bedroom
+    target:
+      entity_id: light.bedroom_light
   mode: single
 - id: '1610374154686'
   alias: Tag Study is scanned
@@ -42,9 +46,9 @@
     tag_id: 48fd88bf-1742-4770-9c9b-c0801da14c15
   condition: []
   action:
-  - service: light.turn_on
-    data: {}
-    entity_id: light.bedroom
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10010523d9
   mode: single
 - id: '1613457110972'
   alias: Turn off bedroom light
@@ -53,7 +57,10 @@
   - platform: state
     to: charging
     entity_id: sensor.oneplus_battery_state
-  condition: []
+  condition:
+  - condition: state
+    entity_id: person.omar
+    state: home
   action:
   - delay:
       hours: 0
@@ -87,10 +94,11 @@
   action:
   - service: switch.turn_off
     data: {}
-    entity_id: switch.movie_light
+    target:
+      entity_id: switch.living_light
   mode: single
 - id: '1613457968409'
-  alias: Turn on living room light
+  alias: Turn on camera snapshot
   description: ''
   trigger:
   - platform: state
@@ -98,9 +106,11 @@
     to: 'on'
   condition: []
   action:
-  - service: switch.turn_on
-    data: {}
-    entity_id: switch.movie_light
+  - service: camera.snapshot
+    target:
+      entity_id: camera.camera_hd
+    data:
+      filename: /media/temp/{{ now().strftime("%Y%m%d-%H%M%S") }}.jpg
   mode: single
 - id: '1613912863622'
   alias: Turn on alarm trigger
@@ -287,7 +297,7 @@
   action:
   - service: switch.turn_off
     target:
-      entity_id: switch.movie_light
+      entity_id: switch.sonoff_10010523d9
   mode: single
 - id: '1626957363206'
   alias: Turn off the home mode
@@ -296,21 +306,41 @@
   - platform: state
     entity_id: group.family
     to: not_home
-  condition: []
+  - platform: state
+    entity_id: group.phone
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: group.family
+      state: not_home
+    - condition: state
+      entity_id: group.phone
+      state: 'off'
   action:
   - service: tapo_control.set_privacy_mode
     data:
       privacy_mode: 'off'
     target:
       entity_id: camera.camera_hd
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.living_light
+      - switch.movie_light
+      - switch.sonoff_10010523d9
   mode: single
 - id: '1626957484012'
   alias: Turn on the home mode
   description: ''
   trigger:
   - platform: state
-    entity_id: group.family
     to: home
+    entity_id: group.family
+  - platform: state
+    entity_id: group.family
+    to: 'on'
   condition: []
   action:
   - service: tapo_control.set_privacy_mode
@@ -318,4 +348,7 @@
       privacy_mode: 'on'
     target:
       entity_id: camera.camera_hd
+  - service: switch.turn_on
+    target:
+      entity_id: switch.living_light
   mode: single
