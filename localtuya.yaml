@@ -27,11 +27,11 @@
 - host: !secret smartplug_host
   device_id: !secret smartplug_id
   local_key: !secret smartplug_key
-  friendly_name: Christmas light
+  friendly_name: Smart Plug
   protocol_version: "3.3"
   entities:
     - platform: switch
-      friendly_name: Christmas light
+      friendly_name: Smart Plug
       id: 1
       current: 18 # Optional
       current_consumption: 19 # Optional
@@ -57,28 +57,28 @@
       scene: 25 # Optional, usually 6 (RGB_HSV) or 25 (HSV), default: "none"
       music_mode: False # Optional, some use internal mic, others, phone mic. Only internal mic is supported, default: "False"
 
-- host: !secret door_host
-  device_id: !secret door_id
-  local_key: !secret door_key
-  friendly_name: Door Sensor
-  protocol_version: "3.3"
-  entities:
-    - platform: binary_sensor
-      friendly_name: Door sensor
-      id: 1
-      device_class: door
-      state_on: "true" # Optional
-      state_off: "false" # Optional
+# - host: !secret motion_host
+#   device_id: !secret motion_id
+#   local_key: !secret motion_key
+#   friendly_name: Motion Sensor
+#   protocol_version: "3.3"
+#   entities:
+#     - platform: binary_sensor
+#       friendly_name: Motion sensor
+#       id: 1
+#       device_class: motion
+#       state_on: "true" # Optional
+#       state_off: "false" # Optional
 
-- host: !secret motion_host
-  device_id: !secret motion_id
-  local_key: !secret motion_key
-  friendly_name: Motion Sensor
+- host: !secret living_host
+  device_id: !secret living_id
+  local_key: !secret living_key
+  friendly_name: Living light
   protocol_version: "3.3"
   entities:
-    - platform: binary_sensor
-      friendly_name: Motion sensor
+    - platform: switch
+      friendly_name: Living light
       id: 1
-      device_class: motion
-      state_on: "true" # Optional
-      state_off: "false" # Optional
+      current: 1 # Optional
+      current_consumption: 1 # Optional
+      voltage: 1 # Optional
