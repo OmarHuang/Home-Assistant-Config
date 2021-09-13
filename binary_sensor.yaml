@@ -5,14 +5,7 @@
   scan_interval: 10
 
 - platform: ping
-  host: !secret nokia_ip
-  name: "Nokia"
-  count: 1
-  scan_interval: 10
-
-- platform: ping
   host: !secret oneplus_ip
   name: "Oneplus"
   count: 1
   scan_interval: 10
-  

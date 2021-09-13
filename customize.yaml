@@ -85,6 +85,11 @@ switch.game_mode_on_off:
   icon: mdi:gamepad-variant
   initial_state: off
 
+switch.movie_mode_on_off:
+  assumed_state: false
+  icon: mdi:movie-roll
+  initial_state: off
+
 switch.alarm_on_off:
   assumed_state: false
   icon: mdi:alarm-light
@@ -116,7 +121,6 @@ switch.gree_power:
   initial_state: off
 
 switch.gree_spin:
-  assumed_state: false
   icon: mdi:fan
   initial_state: off
 
@@ -128,12 +132,32 @@ switch.teco_power:
   icon: mdi:fan
   initial_state: off
 
+switch.teco_timer:
+  icon: mdi:fan
+  initial_state: off
+
 switch.national_power:
   icon: mdi:air-conditioner
   initial_state: off
 
 switch.national_volume:
   icon: mdi:air-conditioner
+  initial_state: off
+
+switch.mod_power:
+  icon: mdi:television
+  initial_state: off
+
+switch.mod_tv:
+  icon: mdi:television
+  initial_state: off
+
+switch.mod_channel:
+  icon: mdi:television
+  initial_state: off
+
+switch.mod_menu:
+  icon: mdi:television
   initial_state: off
 
 # Zone
