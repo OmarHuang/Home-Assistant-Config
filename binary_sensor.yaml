@@ -9,3 +9,9 @@
   name: "Oneplus"
   count: 1
   scan_interval: 10
+
+- platform: ping
+  host: !secret pixel_ip
+  name: "Pixel"
+  count: 1
+  scan_interval: 10

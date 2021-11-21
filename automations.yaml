@@ -111,6 +111,9 @@
       entity_id: camera.camera_hd
     data:
       filename: /media/temp/{{ now().strftime("%Y%m%d-%H%M%S") }}.jpg
+  - service: notify.mobile_app_le2100
+    data:
+      message: Someone is here!
   mode: single
 - id: '1613912863622'
   alias: Turn on alarm trigger
@@ -351,4 +354,20 @@
   - service: switch.turn_on
     target:
       entity_id: switch.living_light
+  mode: single
+- id: '1637479980521'
+  alias: Turn on Notification
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.light
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: group.family
+    state: not_home
+  action:
+  - service: notify.notify
+    data:
+      message: Something turn on the light!
   mode: single
