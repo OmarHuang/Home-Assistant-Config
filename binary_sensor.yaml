@@ -1,10 +1,4 @@
 - platform: ping
-  host: !secret htc_ip
-  name: "HTC"
-  count: 1
-  scan_interval: 10
-
-- platform: ping
   host: !secret oneplus_ip
   name: "Oneplus"
   count: 1
