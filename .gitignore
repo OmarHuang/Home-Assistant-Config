@@ -3,6 +3,7 @@
 .HA_VERSION
 .sonoff.json
 .storage
+custom_components
 deps
 home-assistant_v2.db*
 home-assistant.log*
