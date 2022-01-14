@@ -11,15 +11,6 @@ sensor.price_kerosene:
 sensor.price_kerosene_canned:
   icon: mdi:oil
 
-sensor.2317:
-  icon: mdi:scale-balance
-
-sensor.2330:
-  icon: mdi:scale-balance
-
-sensor.2603:
-  icon: mdi:scale-balance
-
 # Switch
 input_select.tv_mode:
   icon: mdi:youtube-tv
@@ -104,13 +95,13 @@ switch.desktop:
   icon: mdi:desktop-tower
 
 switch.laptop:
-  icon: mdi:laptop-chromebook
+  icon: mdi:laptop
 
 switch.huawei:
-  icon: mdi:laptop-chromebook
+  icon: mdi:laptop
 
 switch.lenovo:
-  icon: mdi:laptop-chromebook
+  icon: mdi:laptop
 
 switch.gree_speed:
   icon: mdi:fan
