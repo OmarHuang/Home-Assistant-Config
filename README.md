@@ -6,7 +6,7 @@
   * Camera
     * [TP-Link C100](https://www.kasasmart.com/us/products/security-cameras/kasa-cam-spot-kc100)
   * Light
-    * [Tuya Light Bulb](https://expo.tuya.com/product/326222)
+    * [Tuya Light Bulb](https://expo.tuya.com/product/761039)
   * Network
     * [Netgear R6900](https://www.amazon.com/NETGEAR-Nighthawk-AC1900-Smart-Router/dp/B01I5T9KVC)
   * Remote
@@ -24,7 +24,7 @@
   * Switches 
     * [Tuya Smart Socket](https://expo.tuya.com/product/373725)
     * [Tuya Smart Touch Switch](https://expo.tuya.com/product/798053)
-    * [Tuya Wifi Smart Breaker](https://expo.tuya.com/product/724008)
+    * [Tuya Wifi Smart Breaker](https://expo.tuya.com/product/839638)
     * [Sonoff MINIR2](https://sonoff.tech/product/diy-smart-switch/minir2/)
   * TV
     * [Chromecast with Google TV](https://store.google.com/us/product/chromecast_google_tv?hl=en-US)
