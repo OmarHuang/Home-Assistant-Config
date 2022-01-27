@@ -29,3 +29,8 @@
   * TV
     * [Chromecast with Google TV](https://store.google.com/us/product/chromecast_google_tv?hl=en-US)
     * [Panasonic 65FX600](https://www.panasonic.com/ca/support/discontinued/televisions-home-entertainment/tc-65fx600.html)
+
+# My dashboard screenshot
+![Dashboard_1](https://github.com/OmarHuang/Home-Assistant-Config/blob/master/img/Dashboard_1.png)
+![Dashboard_2](https://github.com/OmarHuang/Home-Assistant-Config/blob/master/img/Dashboard_2.png)
+![Dashboard_3](https://github.com/OmarHuang/Home-Assistant-Config/blob/master/img/Dashboard_3.png)
