@@ -71,10 +71,10 @@ spotify:
   client_secret: !secret spotify_secret
 
 # Sonoff
-# sonoff: 
-#   username: !secret sonoff_id
-#   password: !secret sonoff_password
-#   mode: local
+sonoff: 
+  username: !secret sonoff_id
+  password: !secret sonoff_password
+  mode: local
 
 # Text to speech
 tts:
