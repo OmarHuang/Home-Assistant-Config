@@ -70,3 +70,19 @@ movie_mode_off:
       milliseconds: 0
   mode: single
   icon: mdi:movie-roll
+disney_plus:
+  alias: Disney plus
+  sequence:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.tv_menu
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.tv_ok
+  mode: single
+  icon: mdi:disqus
