@@ -11,10 +11,13 @@ exposed_domains:
   - climate
   - cover
   - fan
+  - humidifier
   - input_boolean
   - input_select
   - light
+  - media_player
   - scene
   - script
   - sensor
   - switch
+  - vacuum
