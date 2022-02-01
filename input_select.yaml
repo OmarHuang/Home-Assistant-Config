@@ -1,9 +1,0 @@
-tv_mode:
-  name: TV mode
-  options:
-    - "Netflix"
-    - "Youtube"
-    - "HDMI"
-    - "None"
-  icon: mdi:remote
-  initial: "None"
