@@ -73,16 +73,100 @@ movie_mode_off:
 disney_plus:
   alias: Disney plus
   sequence:
-  - service: switch.turn_off
+  - service: remote.send_command
     target:
-      entity_id: switch.tv_menu
+      entity_id: remote.panasonic
+    data:
+      command: home
   - delay:
       hours: 0
       minutes: 0
       seconds: 1
       milliseconds: 0
-  - service: switch.turn_off
+  - service: remote.send_command
     target:
-      entity_id: switch.tv_ok
+      entity_id: remote.panasonic
+    data:
+      command: enter
   mode: single
   icon: mdi:disqus
+hdmi:
+  alias: HDMI
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.panasonic
+    data:
+      command: input_key
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      entity_id: remote.panasonic
+    data:
+      command: enter
+  mode: single
+  icon: mdi:video-input-hdmi
+youtube:
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.panasonic
+    data:
+      command: apps
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      entity_id: remote.panasonic
+    data:
+      command: down
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      entity_id: remote.panasonic
+    data:
+      command: enter
+  mode: single
+  alias: Youtube
+  icon: mdi:youtube
+netflix:
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.panasonic
+    data:
+      command: apps
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      entity_id: remote.panasonic
+    data:
+      command: right
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      entity_id: remote.panasonic
+    data:
+      command: enter
+  mode: single
+  alias: Netflix
+  icon: mdi:netflix
