@@ -15,6 +15,5 @@ Speaker:
 
 Light:
   - switch.living_light
-  - switch.sonoff_10010523d9
   - switch.movie_light
   - light.bedroom_light
