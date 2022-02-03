@@ -29,17 +29,6 @@ script: !include scripts.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 
-# Device Tracker
-# device_tracker:
-#   - platform: netgear
-#     host: !secret netgear_host
-#     username: !secret netgear_name
-#     password: !secret netgear_password
-#     interval_seconds: 10
-#     consider_home: 180
-#     new_device_defaults:
-#       track_new_devices: true
-
 # Google Calendar
 # google:
 #   client_id: !secret google_cal_id
@@ -56,14 +45,6 @@ http:
     - 172.30.33.0/24
   ip_ban_enabled: true
   login_attempts_threshold: 3
-
-# # Rest
-# rest_command:
-#   assistant_relay:
-#     url: !secret rest_url
-#     method: 'post'
-#     content_type: 'application/json'
-#     payload: '{"user": "Omar", "command": "{{ message }}"}'
 
 # Spotify
 spotify:
