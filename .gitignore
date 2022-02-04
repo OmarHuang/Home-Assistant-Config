@@ -1,8 +1,8 @@
 .cloud
 .google.token
-.HA_VERSION
 .sonoff.json
 .storage
+blueprints
 custom_components
 deps
 home-assistant_v2.db*
