@@ -1,156 +1,16 @@
-# Sensor
-sensor.price_95:
-  icon: mdi:oil
-
-sensor.price_98:
-  icon: mdi:oil
-
-sensor.price_kerosene:
-  icon: mdi:oil
-
-sensor.price_kerosene_canned:
-  icon: mdi:oil
-
 # Switch
-input_select.tv_mode:
-  icon: mdi:youtube-tv
-  
-switch.panasonic_power:
-  icon: mdi:youtube-tv
-  initial_state: off
-
-switch.tv_nextflix:
-  icon: mdi:youtube-tv
-  initial_state: off
-
-switch.tv_youtube:
-  icon: mdi:youtube-tv
-  initial_state: off
-
-switch.tv_hdmi:
-  icon: mdi:youtube-tv
-  initial_state: off
-
-switch.tv_mute:
-  icon: mdi:youtube-tv
-  initial_state: off
-
-switch.soundbar_power:
-  icon: mdi:speaker
-  initial_state: off
-
-switch.soundbar_desktop:
-  icon: mdi:speaker
-  initial_state: off
-
-switch.soundbar_laptop:
-  icon: mdi:speaker
-  initial_state: off
-
-switch.soundbar_tv:
-  icon: mdi:speaker
-  initial_state: off
-
-switch.soundbar_mute:
-  icon: mdi:speaker
-  initial_state: off
-
-switch.soundbar_volume:
-  icon: mdi:speaker
-  initial_state: off
-
-switch.soundbar_display:
-  icon: mdi:speaker
-  initial_state: off
-
-switch.soundbar_vertical:
-  icon: mdi:speaker
-  initial_state: off
-
-switch.soundbar_ok:
-  icon: mdi:speaker
-  initial_state: off
-
 switch.game_mode_on_off:
   assumed_state: false
-  icon: mdi:gamepad-variant
   initial_state: off
 
 switch.movie_mode_on_off:
   assumed_state: false
-  icon: mdi:movie-roll
   initial_state: off
 
 switch.alarm_on_off:
   assumed_state: false
-  icon: mdi:alarm-light
   initial_state: off
 
 switch.camera_on_off:
   assumed_state: false
-  icon: mdi:cctv
   initial_state: off
-
-switch.desktop:
-  icon: mdi:desktop-tower
-
-switch.laptop:
-  icon: mdi:laptop
-
-switch.huawei:
-  icon: mdi:laptop
-
-switch.lenovo:
-  icon: mdi:laptop
-
-switch.gree_speed:
-  icon: mdi:fan
-  initial_state: off
-
-switch.gree_power:
-  icon: mdi:fan
-  initial_state: off
-
-switch.gree_spin:
-  icon: mdi:fan
-  initial_state: off
-
-switch.teco_speed:
-  icon: mdi:fan
-  initial_state: off
-
-switch.teco_power:
-  icon: mdi:fan
-  initial_state: off
-
-switch.teco_timer:
-  icon: mdi:fan
-  initial_state: off
-
-switch.national_power:
-  icon: mdi:air-conditioner
-  initial_state: off
-
-switch.national_volume:
-  icon: mdi:air-conditioner
-  initial_state: off
-
-switch.mod_power:
-  icon: mdi:television
-  initial_state: off
-
-switch.mod_tv:
-  icon: mdi:television
-  initial_state: off
-
-switch.mod_channel:
-  icon: mdi:television
-  initial_state: off
-
-switch.mod_menu:
-  icon: mdi:television
-  initial_state: off
-
-# Zone
-zone.home:
-  radius: 40
