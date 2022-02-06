@@ -6,12 +6,13 @@
     tag_id: a4f8caa1-955c-4c8c-a192-6691badedeba
   condition: []
   action:
-  - service: notify.mobile_app_htc_u_3u
+  - service: notify.mobile_app_pixel_6
     data:
       message: Coming home
-  - service: notify.mobile_app_le2100
+  - service: tts.google_say
     data:
       message: Coming home
+      entity_id: media_player.hub
   mode: single
 - id: '1610029670345'
   alias: Tag Living Room is scanned
@@ -220,49 +221,6 @@
     target:
       entity_id: light.bedroom_light
   mode: single
-- id: '1613921281886'
-  alias: Change TV mode
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: input_select.tv_mode
-  condition: []
-  action:
-  - choose:
-    - conditions:
-      - condition: state
-        entity_id: input_select.tv_mode
-        state: Youtube
-      sequence:
-      - service: switch.turn_on
-        data: {}
-        entity_id: switch.tv_youtube
-    - conditions:
-      - condition: state
-        entity_id: input_select.tv_mode
-        state: Netflix
-      sequence:
-      - service: switch.turn_on
-        data: {}
-        entity_id: switch.tv_nextflix
-    - conditions:
-      - condition: state
-        entity_id: input_select.tv_mode
-        state: HDMI
-      sequence:
-      - service: switch.turn_on
-        data: {}
-        entity_id: switch.tv_hdmi
-      - delay:
-          hours: 0
-          minutes: 0
-          seconds: 1
-          milliseconds: 0
-      - service: switch.turn_off
-        data: {}
-        entity_id: switch.tv_hdmi
-    default: []
-  mode: single
 - id: '1615043315433'
   alias: Turn on study light
   description: ''
@@ -309,9 +267,17 @@
   - platform: state
     entity_id: group.family
     to: not_home
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
   - platform: state
     entity_id: group.phone
     to: 'off'
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
   condition:
   - condition: and
     conditions:
@@ -332,7 +298,14 @@
       entity_id:
       - switch.living_light
       - switch.movie_light
-      - switch.sonoff_10010523d9
+    data: {}
+  - service: media_player.turn_off
+    target:
+      entity_id:
+      - media_player.panasonic
+      - media_player.youtube
+      - media_player.hub
+    data: {}
   mode: single
 - id: '1626957484012'
   alias: Turn on the home mode
@@ -342,9 +315,12 @@
     to: home
     entity_id: group.family
   - platform: state
-    entity_id: group.family
+    entity_id: group.phone
     to: 'on'
-  condition: []
+  condition:
+  - condition: state
+    entity_id: group.family
+    state: not_home
   action:
   - service: tapo_control.set_privacy_mode
     data:
@@ -353,10 +329,13 @@
       entity_id: camera.camera_hd
   - service: switch.turn_on
     target:
-      entity_id: switch.living_light
+      entity_id:
+      - switch.living_light
+      - switch.sonoff_100146cdce
+    data: {}
   mode: single
 - id: '1637479980521'
-  alias: Turn on Notification
+  alias: Accidental trigger notification
   description: ''
   trigger:
   - platform: state
@@ -366,8 +345,25 @@
   - condition: state
     entity_id: group.family
     state: not_home
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
   action:
   - service: notify.notify
     data:
       message: Something turn on the light!
+  mode: single
+- id: '1643908928112'
+  alias: Door button press
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_button.door
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.sonoff_100146cdce
   mode: single

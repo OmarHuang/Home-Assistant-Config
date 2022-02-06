@@ -1,33 +1,28 @@
 game_mode_on:
   alias: Game mode on
   sequence:
-  - service: switch.turn_on
-    data: {}
-    entity_id: switch.desktop, switch.panasonic_power
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 1
-      milliseconds: 0
-  - service: switch.turn_on
-    data: {}
-    entity_id: switch.tv_hdmi
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 1
-      milliseconds: 0
-  - service: switch.turn_off
-    data: {}
-    entity_id: switch.tv_hdmi
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 1
-      milliseconds: 0
-  - service: switch.turn_on
+  - service: media_player.turn_on
     target:
-      entity_id: switch.soundbar_desktop
+      entity_id: media_player.panasonic
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.desktop
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: script.hdmi
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: media_player.select_source
+    target:
+      entity_id: media_player.sony
+    data:
+      source: HDMI1
   mode: single
   icon: mdi:gamepad-variant
 game_mode_off:
@@ -35,7 +30,10 @@ game_mode_off:
   sequence:
   - service: switch.turn_off
     data: {}
-    entity_id: switch.desktop, switch.panasonic_power
+    entity_id: switch.desktop
+  - service: media_player.turn_off
+    target:
+      entity_id: media_player.panasonic
   mode: single
   icon: mdi:gamepad-variant
 movie_mode_on:
@@ -97,17 +95,7 @@ hdmi:
     target:
       entity_id: remote.panasonic
     data:
-      command: input_key
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 1
-      milliseconds: 0
-  - service: remote.send_command
-    target:
-      entity_id: remote.panasonic
-    data:
-      command: enter
+      command: NRC_HDMI2-ONOFF
   mode: single
   icon: mdi:video-input-hdmi
 youtube:
