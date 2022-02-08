@@ -60,6 +60,7 @@ sonoff:
 # Text to speech
 tts:
   - platform: google_translate
+    base_url: !secret external_url
     cache: true
     cache_dir: /tmp/tts
     time_memory: 300
