@@ -28,6 +28,7 @@ scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
+zone: !include zones.yaml
 
 # Google Calendars
 google:
