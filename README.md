@@ -27,6 +27,7 @@
     * [Tuya Wifi Smart Breaker](https://expo.tuya.com/product/839638)
     * [Sonoff MINIR2](https://sonoff.tech/product/diy-smart-switch/minir2/)
     * [Sonoff 5V Inching Switch Module](https://www.amazon.com/Onyehn-Channel-Inching-Self-locking-Wireless/dp/B07GZJP5BK/ref=sr_1_14?crid=1KJ3HMX5E7BDP&keywords=sonoff+5v&qid=1643549376&sprefix=sonoff+5vf%2Caps%2C256&sr=8-14)
+    * [SwitchBot Bot](https://www.switch-bot.com/products/switchbot-bot)
   * TV
     * [Chromecast with Google TV](https://store.google.com/us/product/chromecast_google_tv?hl=en-US)
     * [Panasonic 65FX600](https://www.panasonic.com/ca/support/discontinued/televisions-home-entertainment/tc-65fx600.html)
