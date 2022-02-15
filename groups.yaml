@@ -3,7 +3,7 @@ Family:
   - person.p_m_wu
 
 Phone:
-  - binary_sensor.htc
+  - binary_sensor.pixel
   - binary_sensor.oneplus
 
 Speaker:
