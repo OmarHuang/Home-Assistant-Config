@@ -8,10 +8,10 @@
   action:
   - service: notify.mobile_app_pixel_6
     data:
-      message: Coming home
+      message: I'm coming home
   - service: tts.google_say
     data:
-      message: Coming home
+      message: I'm coming home
       entity_id: media_player.hub
   mode: single
 - id: '1610029670345'
@@ -72,31 +72,6 @@
     data: {}
     target:
       entity_id: light.bedroom_light
-  mode: single
-- id: '1609602252443'
-  alias: Turn off living room light
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: group.family
-    to: not_home
-  - platform: state
-    entity_id: group.phone
-    to: 'off'
-  condition:
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: group.family
-      state: not_home
-    - condition: state
-      entity_id: group.phone
-      state: 'off'
-  action:
-  - service: switch.turn_off
-    data: {}
-    target:
-      entity_id: switch.living_light
   mode: single
 - id: '1613457968409'
   alias: Turn on camera snapshot
@@ -221,45 +196,6 @@
     target:
       entity_id: light.bedroom_light
   mode: single
-- id: '1615043315433'
-  alias: Turn on study light
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.door_sensor
-  condition: []
-  action:
-  - choose:
-    - conditions:
-      - condition: state
-        entity_id: binary_sensor.door_sensor
-        state: 'on'
-      sequence:
-      - service: switch.turn_on
-        target:
-          entity_id: switch.movie_light
-    - conditions:
-      - condition: state
-        entity_id: binary_sensor.door_sensor
-        state: 'off'
-      sequence:
-      - service: switch.turn_off
-        target:
-          entity_id: switch.movie_light
-  mode: single
-- id: '1615126056334'
-  alias: Turn off study light
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.motion_sensor
-    to: 'off'
-  condition: []
-  action:
-  - service: switch.turn_off
-    target:
-      entity_id: switch.sonoff_10010523d9
-  mode: single
 - id: '1626957363206'
   alias: Turn off the home mode
   description: ''
@@ -314,13 +250,7 @@
   - platform: state
     to: home
     entity_id: group.family
-  - platform: state
-    entity_id: group.phone
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: group.family
-    state: not_home
+  condition: []
   action:
   - service: tapo_control.set_privacy_mode
     data:
@@ -331,8 +261,11 @@
     target:
       entity_id:
       - switch.living_light
-      - switch.sonoff_100146cdce
     data: {}
+  - service: input_button.press
+    data: {}
+    target:
+      entity_id: input_button.door
   mode: single
 - id: '1637479980521'
   alias: Accidental trigger notification
