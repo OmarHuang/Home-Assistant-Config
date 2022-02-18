@@ -54,6 +54,15 @@ logger:
     custom_components.localtuya.light:
       - "Entity light.bedroom_light is requesting unknown DPS index*"
 
+# lovelace UI
+lovelace:
+  mode: yaml
+  resources:
+    - url: /local/community/button-card/button-card.js
+      type: module
+    - url: /local/community/mini-media-player/mini-media-player-bundle.js
+      type: module
+
 # Spotify
 spotify:
   client_id: !secret spotify_id

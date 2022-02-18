@@ -1,0 +1,559 @@
+button_card_templates: !include button_templates.yaml
+
+title: Home
+views:
+  - path: default_view
+    title: Overview
+    icon: mdi:view-dashboard
+    badges:
+      - entity: binary_sensor.updater
+      - entity: binary_sensor.oneplus
+      - entity: binary_sensor.pixel
+      - entity: person.omar
+      - entity: person.p_m_wu
+      - entity: sun.sun
+      - entity: weather.accuweather
+      - entity: sensor.speedtest_download
+      - entity: sensor.speedtest_upload
+      - entity: sensor.speedtest_ping
+    cards:
+      - type: grid
+        cards:
+          - type: weather-forecast
+            entity: weather.accuweather
+            secondary_info_attribute: humidity
+          - type: alarm-panel
+            states:
+              - arm_away
+            entity: alarm_control_panel.alarm_system
+            name: Alarm System
+        columns: 1
+        square: false
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: light.bedroom_light
+                icon: mdi:globe-light
+                name: Bedroom light
+              - entity: switch.kitchen_light
+                icon: mdi:led-strip
+                name: Kitchen light
+              - entity: switch.living_light
+                icon: mdi:chandelier
+                name: Living light
+              - entity: switch.movie_light
+                icon: mdi:led-strip-variant
+                name: Movie light
+              - entity: switch.study_light
+                icon: mdi:switch
+                name: Study light
+              - entity: switch.laptop
+                icon: mdi:laptop
+                name: Acer
+              - entity: switch.huawei
+                icon: mdi:laptop
+                name: Huawei
+              - entity: switch.desktop
+                icon: mdi:desktop-tower
+                name: Desktop
+              - entity: input_button.door
+                icon: mdi:door
+                name: Door
+            state_color: true
+            title: Control
+            show_header_toggle: false
+          - type: entities
+            entities:
+              - entity: switch.alarm_on_off
+                icon: mdi:alarm-light
+                name: Alarm mode
+              - entity: switch.game_mode_on_off
+                icon: mdi:gamepad-variant
+                name: Game mode
+              - entity: switch.movie_mode_on_off
+                icon: mdi:movie-roll
+                name: Movie mode
+            title: Mode
+            show_header_toggle: false
+            state_color: true
+        columns: 1
+        square: false
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: power     
+                    entity_id: remote.panasonic      
+                icon: mdi:power    
+                template: remote_button
+                color_type: card
+                color: red     
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.netflix
+                icon: mdi:netflix
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.youtube
+                icon: mdi:youtube
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.disney_plus
+                icon: mdi:disqus
+                template: remote_button
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.hdmi
+                icon: mdi:exit-to-app
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service    
+                  service: remote.send_command
+                  service_data:
+                    command: up
+                    entity_id: remote.panasonic                  
+                icon: mdi:arrow-up
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: exit
+                    entity_id: remote.panasonic
+                icon: mdi:alpha-x
+                template: remote_button
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: left
+                    entity_id: remote.panasonicu
+                icon: mdi:arrow-left
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: enter
+                    entity_id: remote.panasonic
+                icon: mdi:alpha-o
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: right
+                    entity_id: remote.panasonic
+                icon: mdi:arrow-right
+                template: remote_button
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: call-service          
+                  service: remote.send_command
+                  service_data:
+                    command: apps
+                    entity_id: remote.panasonic
+                icon: mdi:apps
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: down
+                    entity_id: remote.panasonic
+                icon: mdi:arrow-down
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: return
+                    entity_id: remote.panasonic
+                icon: mdi:undo-variant
+                template: remote_button
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: volume_up
+                    entity_id: remote.panasonic
+                icon: mdi:volume-plus
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: mute
+                    entity_id: remote.panasonic
+                icon: mdi:volume-mute
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: ch_up
+                    entity_id: remote.panasonic
+                icon: mdi:chevron-up
+                template: remote_button
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: volume_down
+                    entity_id: remote.panasonic
+                icon: mdi:volume-minus
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.soundbar_vertical
+                icon: mdi:tune-vertical-variant
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    command: ch_down
+                    entity_id: remote.panasonic
+                icon: mdi:chevron-down
+                template: remote_button
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: media_player.toggle
+                  service_data:
+                    entity_id: media_player.sony
+                icon: mdi:soundbar
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: media_player.select_source
+                  service_data:
+                    entity_id: media_player.sony
+                    source: TV
+                icon: mdi:youtube-tv
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: media_player.select_source
+                  service_data:
+                    entity_id: media_player.sony
+                    source: HDMI1
+                icon: mdi:desktop-tower
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: call-service
+                  service: media_player.select_source
+                  service_data:
+                    entity_id: media_player.sony
+                    source: HDMI2
+                icon: mdi:laptop
+                template: remote_button
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.national_power
+                icon: mdi:air-conditioner
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.national_volume_up
+                icon: mdi:thermometer-plus
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.national_volume_down
+                icon: mdi:thermometer-minus
+                template: remote_button
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.teco_power
+                icon: mdi:fan
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.teco_volume_up
+                icon: mdi:fan-plus
+                template: remote_button
+              - type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.teco_volume_down
+                icon: mdi:fan-minus
+                template: remote_button
+
+  - title: Video
+    path: video
+    icon: mdi:video
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: media-control
+            entity: media_player.panasonic
+            icon: mdi:television
+          - type: media-control
+            entity: media_player.sony
+            icon: mdi:soundbar
+          - type: media-control
+            entity: media_player.lenovo
+            icon: mdi:google-home
+          - type: media-control
+            entity: media_player.home
+            icon: mdi:google-home
+          - type: media-control
+            entity: media_player.nest
+            icon: mdi:google-home
+          - type: media-control
+            entity: media_player.hub
+            icon: mdi:tablet-dashboard
+        columns: 1
+        square: false
+      - type: grid
+        cards:
+          - type: custom:mini-media-player
+            entity: media_player.spotify
+            artwork: cover
+            hide:
+              volume: true
+            shortcuts:
+              columns: 2
+              buttons:
+                - icon: mdi:bed
+                  type: source
+                  id: Study
+                - icon: mdi:rocket
+                  type: source
+                  id: Rocket
+            name: Spotify
+          - type: custom:mini-media-player
+            entity: media_player.youtube
+            artwork: cover
+            shortcuts:
+              columns: 3
+              buttons:
+                - name: A Star Is Born
+                  type: playlist
+                  id: PLzH00eWf9kydXry3OcJ8GT5FaKXyi23UR
+                - name: Mido
+                  type: playlist
+                  id: PLzH00eWf9kydLGf4gS7YWPOmCEcrd_OpA
+                - name: Green Piano
+                  type: playlist
+                  id: PL9-fpiS4qoF-xFYjgEkoxeIqxJ_6O1dc4
+            name: Youtube
+          - type: custom:mini-media-player
+            artwork: cover
+            entity: media_player.plex_linux
+            icon: mdi:plex
+            name: Plex on Linux
+          - type: custom:mini-media-player
+            artwork: cover
+            entity: media_player.plex_windows
+            icon: mdi:plex
+            name: Plex on Windows
+          - type: entities
+            entities:
+              - entity: sensor.plex_server_omar
+        columns: 1
+        square: false
+      - type: grid
+        cards:
+          - type: picture-glance
+            title: Living Room
+            camera_image: camera.camera_hd
+            camera_view: live
+            entities:
+              - entity: camera.camera_hd
+                icon: mdi:eye-outline
+                tap_action:
+                  action: call-service
+                  service: tapo_control.set_privacy_mode
+                  service_data:
+                    entity_id: camera.camera_hd
+                    privacy_mode: 'off'
+              - entity: camera.camera_hd
+                icon: mdi:eye-off-outline
+                tap_action:
+                  action: call-service
+                  service: tapo_control.set_privacy_mode
+                  service_data:
+                    entity_id: camera.camera_hd
+                    privacy_mode: 'on'
+              - entity: camera.camera_hd
+                icon: mdi:alarm-light-outline
+                tap_action:
+                  action: call-service
+                  service: tapo_control.set_alarm_mode
+                  service_data:
+                    entity_id: camera.camera_hd
+                    alarm_mode: 'off'
+                    sound: 'on'
+                    light: 'off'
+              - entity: camera.camera_hd
+                icon: mdi:alarm-light
+                tap_action:
+                  action: call-service
+                  service: tapo_control.set_alarm_mode
+                  service_data:
+                    entity_id: camera.camera_hd
+                    alarm_mode: 'on'
+                    sound: 'on'
+                    light: 'on'
+              - entity: camera.camera_hd
+                icon: mdi:camera
+                tap_action:
+                  action: call-service
+                  service: camera.snapshot
+                  service_data:
+                    filename: /media/temp/{{ now().strftime("%Y%m%d-%H%M%S") }}.jpg
+                    entity_id: camera.camera_hd
+              - entity: camera.camera_hd
+                icon: mdi:record-rec
+                tap_action:
+                  action: call-service
+                  service: camera.record
+                  service_data:
+                    filename: /media/temp/{{ now().strftime("%Y%m%d-%H%M%S") }}.mp4
+                    duration: 10
+                    lookback: 10
+                    entity_id: camera.camera_hd
+              - entity: camera.camera_hd
+                icon: mdi:power
+                tap_action:
+                  action: call-service
+                  service: tapo_control.reboot
+                  service_data:
+                    entity_id: camera.camera_hd
+            hold_action:
+              action: more-info
+          - type: entities
+            entities:
+              - entity: sensor.mini_temperature
+              - entity: sensor.mini_humidity
+              - entity: binary_sensor.camera_motion
+                name: Living room motion
+          # - type: entities
+          #   entities:
+          #     - entity: binary_sensor.motion_sensor
+          #       name: Kitchen motion
+          #   title: Kitchen
+        square: false
+        columns: 1
+        title: Living Room
+
+  - title: Information
+    path: information
+    icon: mdi:information
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.taiwan_coronavirus_confirmed
+              - entity: sensor.taiwan_coronavirus_deaths
+              - entity: sensor.worldwide_coronavirus_confirmed
+              - entity: sensor.worldwide_coronavirus_deaths
+            title: Corona
+          - type: entities
+            entities:
+              - entity: sensor.gdacs
+            title: GDACS
+        columns: 1
+        square: false
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.price_95
+                icon: mdi:oil
+                name: Price 95
+              - entity: sensor.price_kerosene
+                icon: mdi:oil
+                name: Price kerosene
+              - entity: sensor.price_kerosene_canned
+                icon: mdi:oil
+                name: Price kerosene canned
+            title: Gasoline
+        columns: 1
+        square: false
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.processor_temperature
+              - entity: sensor.processor_use_percent
+              - entity: sensor.memory_use_percent
+                name: Memory use
+              - entity: sensor.hacs
+                name: HACS
+              - entity: binary_sensor.updater
+            show_header_toggle: false
+            state_color: false
+            title: System
+          - type: entities
+            entities:
+              - entity: sensor.oneplus_battery_level
+              - entity: sensor.oneplus_battery_state
+              - entity: sensor.pixel_6_battery_level
+              - entity: sensor.pixel_6_battery_state
+              - entity: sensor.study_light_battery
+            title: Battery
+        square: false
+        columns: 1
