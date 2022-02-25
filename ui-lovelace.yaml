@@ -45,9 +45,6 @@ views:
               - entity: switch.movie_light
                 icon: mdi:led-strip-variant
                 name: Movie light
-              - entity: switch.study_light
-                icon: mdi:switch
-                name: Study light
               - entity: switch.laptop
                 icon: mdi:laptop
                 name: Acer
@@ -488,11 +485,6 @@ views:
               - entity: sensor.mini_humidity
               - entity: binary_sensor.camera_motion
                 name: Living room motion
-          # - type: entities
-          #   entities:
-          #     - entity: binary_sensor.motion_sensor
-          #       name: Kitchen motion
-          #   title: Kitchen
         square: false
         columns: 1
         title: Living Room
@@ -511,10 +503,6 @@ views:
               - entity: sensor.worldwide_coronavirus_confirmed
               - entity: sensor.worldwide_coronavirus_deaths
             title: Corona
-          - type: entities
-            entities:
-              - entity: sensor.gdacs
-            title: GDACS
         columns: 1
         square: false
       - type: grid
@@ -553,7 +541,6 @@ views:
               - entity: sensor.oneplus_battery_state
               - entity: sensor.pixel_6_battery_level
               - entity: sensor.pixel_6_battery_state
-              - entity: sensor.study_light_battery
             title: Battery
         square: false
         columns: 1
