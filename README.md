@@ -13,6 +13,7 @@
     * [Brodlink RM4](https://www.amazon.com/Broadlink-RM4-Universal-Control-Compatible/dp/B07ZSF46BX)
   * Sensors
     * [Brodlink HTS2 Sensor Accessory](https://www.amazon.com/Broadlink-Accessory-Temperature-Humidity-Monitor/dp/B081F3C4T4?language=en_US&th=1)
+    * [Sonoff SNZB-04 ZigBee Wireless Door/Window Sensor](https://sonoff.tech/product/smart-home-security/snzb-04/)
     * [Tuya Door Sensor](https://expo.tuya.com/product/790054)
     * [Tuya Motion Sensor](https://expo.tuya.com/product/374497)
   * Speakers
@@ -22,6 +23,7 @@
     * [Nest Mini](https://store.google.com/us/product/google_nest_mini?hl=en-US)
     * [Sony Z9F](https://www.sony.com/electronics/sound-bars/ht-z9f)
   * Switches 
+    * [Moes ZigBee Smart Touch Wall Light Switch](https://www.amazon.com/MOES-Requires-Neutral-Capacitor-Control/dp/B08X3BNQ3X?&linkCode=sl1&tag=ehsmart-20&linkId=d1e6e73da7849627bb24871856ca4dfe&language=en_US&ref_=as_li_ss_tl)
     * [Tuya Smart Socket](https://expo.tuya.com/product/373725)
     * [Tuya Smart Touch Switch](https://expo.tuya.com/product/798053)
     * [Tuya Wifi Smart Breaker](https://expo.tuya.com/product/839638)
@@ -31,6 +33,8 @@
   * TV
     * [Chromecast with Google TV](https://store.google.com/us/product/chromecast_google_tv?hl=en-US)
     * [Panasonic 65FX600](https://www.panasonic.com/ca/support/discontinued/televisions-home-entertainment/tc-65fx600.html)
+  * Zigbee
+    * [Sonoff ZigBee 3.0 USB Dongle Plus](https://sonoff.tech/product/diy-smart-switch/sonoff-dongle-plus/)
 
 # My dashboard screenshot
 ![Dashboard_1](https://github.com/OmarHuang/Home-Assistant-Config/blob/master/img/Dashboard_1.png)
