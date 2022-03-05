@@ -12,4 +12,5 @@ known_devices.yaml
 secrets.yaml
 tts
 www
+zigbee.db
 zones.yaml
