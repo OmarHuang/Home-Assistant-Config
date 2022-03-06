@@ -47,9 +47,10 @@
     tag_id: 48fd88bf-1742-4770-9c9b-c0801da14c15
   condition: []
   action:
-  - service: switch.toggle
+  - service: light.toggle
+    data: {}
     target:
-      entity_id: switch.sonoff_10010523d9
+      entity_id: light.study_light
   mode: single
 - id: '1613457110972'
   alias: Turn off bedroom light
@@ -98,6 +99,9 @@
   - platform: state
     entity_id: binary_sensor.camera_motion
     to: 'on'
+  - platform: state
+    entity_id: binary_sensor.kitchen_door
+    to: 'on'
   condition:
   - condition: state
     entity_id: alarm_control_panel.alarm_system
@@ -114,11 +118,11 @@
       entity_id:
       - media_player.nest
       - media_player.lenovo
+      - media_player.hub
+      - media_player.home
   - service: camera.record
     data:
       filename: /media/movement_{{ now().strftime("%Y%m%d-%H%M%S") }}.mp4
-      duration: 10
-      lookback: 10
     target:
       entity_id: camera.camera_hd
   mode: single
@@ -129,6 +133,9 @@
   - platform: state
     entity_id: binary_sensor.camera_motion
     to: 'off'
+  - platform: state
+    entity_id: binary_sensor.kitchen_door
+    to: 'off'
   condition: []
   action:
   - service: media_player.turn_off
@@ -136,6 +143,9 @@
       entity_id:
       - media_player.nest
       - media_player.lenovo
+      - media_player.hub
+      - media_player.home
+    data: {}
   mode: single
 - id: '1613916020645'
   alias: Turn on alarm system
@@ -229,12 +239,6 @@
       privacy_mode: 'off'
     target:
       entity_id: camera.camera_hd
-  - service: switch.turn_off
-    target:
-      entity_id:
-      - switch.living_light
-      - switch.movie_light
-    data: {}
   - service: media_player.turn_off
     target:
       entity_id:
@@ -242,6 +246,19 @@
       - media_player.youtube
       - media_player.hub
     data: {}
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.living_light
+      - switch.movie_light
+      - switch.kitchen_light
+    data: {}
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id:
+      - light.bedroom_light
+      - light.study_light
   mode: single
 - id: '1626957484012'
   alias: Turn on the home mode
