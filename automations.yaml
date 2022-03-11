@@ -97,11 +97,8 @@
   description: ''
   trigger:
   - platform: state
-    entity_id: binary_sensor.camera_motion
     to: 'on'
-  - platform: state
-    entity_id: binary_sensor.kitchen_door
-    to: 'on'
+    entity_id: group.sensor
   condition:
   - condition: state
     entity_id: alarm_control_panel.alarm_system
@@ -109,7 +106,7 @@
   action:
   - service: notify.notify
     data:
-      message: Motion detected someone at home!
+      message: Motion detected/door opened someone at home!
   - service: media_player.play_media
     data:
       media_content_type: music

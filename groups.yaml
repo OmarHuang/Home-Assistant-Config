@@ -3,8 +3,8 @@ Family:
   - person.p_m_wu
 
 Phone:
-  - binary_sensor.pixel
   - binary_sensor.oneplus
+  - binary_sensor.pixel
 
 Speaker:
   - media_player.home
@@ -14,6 +14,12 @@ Speaker:
   - media_player.sony
 
 Light:
+  - light.bedroom_light
+  - light.study_light
+  - switch.kitchen_light
   - switch.living_light
   - switch.movie_light
-  - light.bedroom_light
+
+Sensor:
+  - binary_sensor.camera_motion
+  - binary_sensor.kitchen_door
