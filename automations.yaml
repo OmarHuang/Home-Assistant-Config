@@ -276,10 +276,6 @@
       entity_id:
       - switch.living_light
     data: {}
-  - service: input_button.press
-    data: {}
-    target:
-      entity_id: input_button.door
   mode: single
 - id: '1637479980521'
   alias: Accidental trigger notification
@@ -313,4 +309,21 @@
     data: {}
     target:
       entity_id: switch.sonoff_100146cdce
+  mode: single
+- id: '1648638637289'
+  alias: Open the door when family come to home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: person.omar
+    to: home
+  - platform: state
+    entity_id: person.p_m_wu
+    to: home
+  condition: []
+  action:
+  - service: button.press
+    data: {}
+    target:
+      entity_id: input_button.door
   mode: single
