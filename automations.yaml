@@ -322,7 +322,7 @@
     to: home
   condition: []
   action:
-  - service: button.press
+  - service: input_button.press
     data: {}
     target:
       entity_id: input_button.door
