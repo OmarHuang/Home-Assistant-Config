@@ -248,7 +248,6 @@
       entity_id:
       - switch.living_light
       - switch.movie_light
-      - switch.kitchen_light
     data: {}
   - service: light.turn_off
     data: {}

@@ -36,15 +36,15 @@ views:
               - entity: light.bedroom_light
                 icon: mdi:globe-light
                 name: Bedroom light
-              - entity: switch.kitchen_light
-                icon: mdi:led-strip
-                name: Kitchen light
               - entity: switch.living_light
                 icon: mdi:chandelier
                 name: Living light
               - entity: switch.movie_light
                 icon: mdi:led-strip-variant
                 name: Movie light
+              - entity: light.study_light
+                icon: mdi:string-lights
+                name: Study light
               - entity: switch.laptop
                 icon: mdi:laptop
                 name: Acer
@@ -56,15 +56,12 @@ views:
                 name: Desktop
               - entity: input_button.door
                 icon: mdi:door
-                name: Door
+                name: Door button
             state_color: true
             title: Control
             show_header_toggle: false
           - type: entities
             entities:
-              - entity: switch.alarm_on_off
-                icon: mdi:alarm-light
-                name: Alarm mode
               - entity: switch.game_mode_on_off
                 icon: mdi:gamepad-variant
                 name: Game mode
@@ -485,6 +482,10 @@ views:
               - entity: sensor.mini_humidity
               - entity: binary_sensor.camera_motion
                 name: Living room motion
+          - type: entities
+            entities:
+              - entity: binary_sensor.kitchen_door
+                name: Kitchen door
         square: false
         columns: 1
         title: Living Room
@@ -541,6 +542,7 @@ views:
               - entity: sensor.oneplus_battery_state
               - entity: sensor.pixel_6_battery_level
               - entity: sensor.pixel_6_battery_state
+              - entity: sensor.kitchen_door_power
             title: Battery
         square: false
         columns: 1

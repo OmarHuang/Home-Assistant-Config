@@ -16,7 +16,6 @@ Speaker:
 Light:
   - light.bedroom_light
   - light.study_light
-  - switch.kitchen_light
   - switch.living_light
   - switch.movie_light
 
