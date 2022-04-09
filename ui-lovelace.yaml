@@ -484,6 +484,10 @@ views:
                 name: Living room motion
           - type: entities
             entities:
+              - entity: sensor.bedroom_temperature
+              - entity: sensor.bedroom_humidity
+          - type: entities
+            entities:
               - entity: binary_sensor.kitchen_door
                 name: Kitchen door
         square: false
