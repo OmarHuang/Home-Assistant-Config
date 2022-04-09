@@ -12,6 +12,7 @@ views:
       - entity: person.omar
       - entity: person.p_m_wu
       - entity: sun.sun
+      - entity: sensor.moon
       - entity: weather.accuweather
       - entity: sensor.speedtest_download
       - entity: sensor.speedtest_upload
