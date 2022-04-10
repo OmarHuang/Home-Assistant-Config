@@ -15,9 +15,9 @@ Speaker:
 
 Light:
   - light.bedroom_light
+  - light.living_light
+  - light.movie_light
   - light.study_light
-  - switch.living_light
-  - switch.movie_light
 
 Sensor:
   - binary_sensor.camera_motion

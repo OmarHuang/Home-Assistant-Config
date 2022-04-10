@@ -37,10 +37,10 @@ views:
               - entity: light.bedroom_light
                 icon: mdi:globe-light
                 name: Bedroom light
-              - entity: switch.living_light
-                icon: mdi:chandelier
+              - entity: light.living_light
+                icon: mdi:ceiling-fan-light
                 name: Living light
-              - entity: switch.movie_light
+              - entity: light.movie_light
                 icon: mdi:led-strip-variant
                 name: Movie light
               - entity: light.study_light

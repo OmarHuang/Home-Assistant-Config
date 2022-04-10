@@ -38,29 +38,29 @@ game_mode_off:
   icon: mdi:gamepad-variant
 movie_mode_on:
   sequence:
-  - service: switch.turn_on
+  - service: light.turn_on
     target:
-      entity_id: switch.movie_light
+      entity_id: light.movie_light
   - delay:
       hours: 0
       minutes: 0
       seconds: 1
       milliseconds: 0
-  - service: switch.turn_off
+  - service: light.turn_off
     target:
-      entity_id: switch.living_light
+      entity_id: light.living_light
   mode: single
   alias: Movie mode on
   icon: mdi:movie-roll
 movie_mode_off:
   alias: Movie mode off
   sequence:
-  - service: switch.turn_on
+  - service: light.turn_on
     target:
-      entity_id: switch.living_light
-  - service: switch.turn_off
+      entity_id: light.living_light
+  - service: light.turn_off
     target:
-      entity_id: switch.movie_light
+      entity_id: light.movie_light
   - delay:
       hours: 0
       minutes: 0
