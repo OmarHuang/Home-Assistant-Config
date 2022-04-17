@@ -246,7 +246,7 @@
   - service: light.turn_off
     data: {}
     target:
-      entity_id: group.light
+      entity_id: light.test
   mode: single
 - id: '1626957484012'
   alias: Turn on the home mode
@@ -307,13 +307,31 @@
   - platform: state
     entity_id: person.omar
     to: home
-  - platform: state
-    entity_id: person.p_m_wu
-    to: home
   condition: []
   action:
   - service: input_button.press
     data: {}
     target:
       entity_id: input_button.door
+  mode: single
+- id: '1649583212456'
+  alias: Kitchen door open notification
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_door
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: Please close kitchen door
+  - service: tts.google_say
+    data:
+      message: Please close kitchen door
+      entity_id: media_player.nest
   mode: single
