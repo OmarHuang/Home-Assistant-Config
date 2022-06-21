@@ -2,10 +2,6 @@ Family:
   - person.omar
   - person.p_m_wu
 
-Phone:
-  - binary_sensor.oneplus
-  - binary_sensor.pixel
-
 Speaker:
   - media_player.home
   - media_player.hub
