@@ -214,22 +214,7 @@
       hours: 0
       minutes: 2
       seconds: 0
-  - platform: state
-    entity_id: group.phone
-    to: 'off'
-    for:
-      hours: 0
-      minutes: 2
-      seconds: 0
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: group.family
-      state: not_home
-    - condition: state
-      entity_id: group.phone
-      state: 'off'
+  condition: []
   action:
   - service: tapo_control.set_privacy_mode
     data:
@@ -307,7 +292,13 @@
   - platform: state
     entity_id: person.omar
     to: home
-  condition: []
+  - platform: state
+    entity_id: person.p_m_wu
+    to: home
+  condition:
+  - condition: template
+    value_template: '{{ (as_timestamp(now()) - as_timestamp(states(''input_button.door'')))
+      > 300 }}'
   action:
   - service: input_button.press
     data: {}
