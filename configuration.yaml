@@ -30,11 +30,6 @@ sensor: !include sensors.yaml
 switch: !include switches.yaml
 zone: !include zones.yaml
 
-# Google Calendars
-google:
-  client_id: !secret google_cal_id
-  client_secret: !secret google_cal_secret
-
 # Https
 http:
   # server_port: !secret server_port
@@ -63,21 +58,9 @@ lovelace:
     - url: /local/community/mini-media-player/mini-media-player-bundle.js
       type: module
 
-# Spotify
-spotify:
-  client_id: !secret spotify_id
-  client_secret: !secret spotify_secret
-
-# Sonoff
-sonoff: 
-  username: !secret sonoff_id
-  password: !secret sonoff_password
-  mode: local
-
 # Text to speech
 tts:
   - platform: google_translate
-    base_url: !secret external_url
     cache: true
     cache_dir: /tmp/tts
     time_memory: 300
