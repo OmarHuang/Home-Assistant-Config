@@ -7,6 +7,7 @@
     * [TP-Link C100](https://www.kasasmart.com/us/products/security-cameras/kasa-cam-spot-kc100)
   * Light
     * [Tuya Light Bulb](https://expo.tuya.com/product/761039)
+    * [Yeelight Ceiling Light](https://www.amazon.co.uk/Yeelight-Bluetooth-2700K-6000K-Temperature-Adjustable/dp/B07DGSTN1J)
   * Network
     * [Netgear R6900](https://www.amazon.com/NETGEAR-Nighthawk-AC1900-Smart-Router/dp/B01I5T9KVC)
   * Remote
