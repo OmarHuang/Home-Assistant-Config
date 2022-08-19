@@ -14,10 +14,10 @@
     * [Brodlink RM4](https://www.amazon.com/Broadlink-RM4-Universal-Control-Compatible/dp/B07ZSF46BX)
   * Sensors
     * [Brodlink HTS2 Sensor Accessory](https://www.amazon.com/Broadlink-Accessory-Temperature-Humidity-Monitor/dp/B081F3C4T4?language=en_US&th=1)
+    * [Mijia Bluetooth Thermometer](https://www.amazon.com/saikang-Bluetooth-Thermometer-Wireless-Hygrometer/dp/B083Y1D8WB)
     * [Sonoff SNZB-04 ZigBee Wireless Door/Window Sensor](https://sonoff.tech/product/smart-home-security/snzb-04/)
     * [Tuya Door Sensor](https://expo.tuya.com/product/790054)
     * [Tuya Motion Sensor](https://expo.tuya.com/product/374497)
-    * [Mijia Bluetooth Thermometer](https://www.amazon.com/saikang-Bluetooth-Thermometer-Wireless-Hygrometer/dp/B083Y1D8WB)
   * Speakers
     * [Home Mini](https://store.google.com/us/product/google_home_mini_first_gen?hl=en-US)
     * [Lenovo Smart Clock Essential](https://www.lenovo.com/us/en/virtual-reality-and-smart-devices/smart-home/smart-home-series/Smart-Clock-Essential/p/ZZISZSDCD05)
