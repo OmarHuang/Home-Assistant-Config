@@ -15,6 +15,7 @@
   * Sensors
     * [Brodlink HTS2 Sensor Accessory](https://www.amazon.com/Broadlink-Accessory-Temperature-Humidity-Monitor/dp/B081F3C4T4?language=en_US&th=1)
     * [Mijia Bluetooth Thermometer](https://www.amazon.com/saikang-Bluetooth-Thermometer-Wireless-Hygrometer/dp/B083Y1D8WB)
+    * [Sonoff SNZB-03 ZigBee Motion Sensor](https://sonoff.tech/product/smart-home-security/snzb-03/)    
     * [Sonoff SNZB-04 ZigBee Wireless Door/Window Sensor](https://sonoff.tech/product/smart-home-security/snzb-04/)
     * [Tuya Door Sensor](https://expo.tuya.com/product/790054)
     * [Tuya Motion Sensor](https://expo.tuya.com/product/374497)
