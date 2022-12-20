@@ -23,7 +23,6 @@ group: !include groups.yaml
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
 input_text: !include input_text.yaml
-localtuya: !include localtuya.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml
