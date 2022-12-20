@@ -8,7 +8,6 @@ wake_on_lan:
 
 homeassistant:
   customize: !include customize.yaml
-  currency: USD
   external_url: !secret external_url
   internal_url: !secret internal_url
   media_dirs:
