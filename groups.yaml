@@ -12,9 +12,11 @@ Speaker:
 Light:
   - light.bedroom_light
   - light.living_light
+  - light.main_light
   - light.movie_light
   - light.study_light
 
 Sensor:
   - binary_sensor.camera_motion
   - binary_sensor.kitchen_door
+  - binary_sensor.study_motion
